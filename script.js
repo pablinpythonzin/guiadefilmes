@@ -1,7 +1,3 @@
-/* =========================================================
-   🍿 POPCORN HUB — SCRIPT.JS
-   ========================================================= */
-
 const filmes = [
     {
         id: 1,
@@ -11,7 +7,7 @@ const filmes = [
         sinopse: "Peter Parker precisa lidar com as consequências de sua identidade revelada e acaba enfrentando ameaças de outros universos.",
         classificacao: "12",
         nota: "8.7",
-        capa: "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+        capa: "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/a/a2/No_Way_Home_Poster.jpg",
         trailerId: "JfVOs4VSpmA"
     },
     {
@@ -22,7 +18,7 @@ const filmes = [
         sinopse: "Riley está entrando na adolescência e novas emoções aparecem em sua mente.",
         classificacao: "L",
         nota: "8.5",
-        capa: "https://image.tmdb.org/t/p/w500/9b2h9j48H4d2f0vY0p7Kqg9p44S.jpg",
+        capa: "https://upload.wikimedia.org/wikipedia/pt/f/f6/Inside_Out_2_poster.jpg",
         trailerId: "LEjhY15eCx0"
     },
     {
@@ -33,7 +29,7 @@ const filmes = [
         sinopse: "Um grupo de astronautas parte em uma missão através de um buraco de minhoca em busca de um novo lar para a humanidade.",
         classificacao: "10",
         nota: "8.7",
-        capa: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+        capa: "https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png",
         trailerId: "zSWdZVtXT7E"
     },
     {
@@ -44,7 +40,7 @@ const filmes = [
         sinopse: "Batman investiga uma série de crimes cometidos por um misterioso assassino em Gotham City.",
         classificacao: "14",
         nota: "8.0",
-        capa: "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+        capa: "https://upload.wikimedia.org/wikipedia/pt/9/90/The_Batman_poster.jpg",
         trailerId: "mqqft2x_Aa4"
     },
     {
@@ -55,7 +51,7 @@ const filmes = [
         sinopse: "Arthur Fleck é um homem ignorado pela sociedade que inicia uma transformação que mudará Gotham para sempre.",
         classificacao: "16",
         nota: "8.4",
-        capa: "https://image.tmdb.org/t/p/w500/udDclC23zEkBhNvChFfsUt0YqO.jpg",
+        capa: "https://upload.wikimedia.org/wikipedia/pt/6/63/Joker_2019.jpg",
         trailerId: "zAGVQLHvwOY"
     },
     {
@@ -66,7 +62,7 @@ const filmes = [
         sinopse: "Jake Sully e sua família enfrentam novas ameaças enquanto procuram segurança entre os povos dos oceanos de Pandora.",
         classificacao: "12",
         nota: "7.6",
-        capa: "https://image.tmdb.org/t/p/w500/t6HIrqToCMzjJPebccAMasESvsC.jpg",
+        capa: "https://upload.wikimedia.org/wikipedia/pt/5/54/Avatar_The_Way_of_Water_poster.jpg",
         trailerId: "d9MyW72ELq0"
     },
     {
@@ -77,7 +73,7 @@ const filmes = [
         sinopse: "A história do físico J. Robert Oppenheimer e de sua participação no desenvolvimento da bomba atômica.",
         classificacao: "16",
         nota: "8.6",
-        capa: "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGvjWd1sCYw.jpg",
+        capa: "https://upload.wikimedia.org/wikipedia/pt/0/08/Oppenheimer_cartaz.jpg",
         trailerId: "uYPbbksJxIg"
     },
     {
@@ -88,231 +84,7 @@ const filmes = [
         sinopse: "Dois agentes do FBI precisam se disfarçar como duas socialites para protegê-las e acabam vivendo situações hilárias.",
         classificacao: "12",
         nota: "7.0",
-        capa: "https://image.tmdb.org/t/p/w500/3Z0U49xXl04v7W2X6S0lG1213qW.jpg",
+        capa: "https://upload.wikimedia.org/wikipedia/pt/d/d4/White_chicks_poster.jpg",
         trailerId: "aeVkbNka9HM"
     }
 ];
-
-// SVG padrão de fallback para impedir imagem quebrada
-const PLACEHOLDER_IMG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='50%' font-family='sans-serif' font-size='30' fill='%239ca3af' text-anchor='middle'>🎬 Sem Imagem</text></svg>";
-
-let favoritos = JSON.parse(localStorage.getItem("popcorn_favs")) || [];
-let vistos = JSON.parse(localStorage.getItem("popcorn_watched")) || [];
-let likes = JSON.parse(localStorage.getItem("popcorn_likes")) || [];
-let dislikes = JSON.parse(localStorage.getItem("popcorn_dislikes")) || [];
-
-let generoAtual = "all";
-let filmeAtual = null;
-
-let movieGrid, favoritesGrid, emptyFavorites, searchInput, modal, modalTitle, modalSynopsis, modalRating, modalAge, trailer, favoriteBtn, watchedBtn, likeBtn, dislikeBtn;
-
-function carregarElementosDOM() {
-    movieGrid = document.getElementById("movie-grid");
-    favoritesGrid = document.getElementById("favorites-grid");
-    emptyFavorites = document.getElementById("empty-favorites");
-    searchInput = document.getElementById("movie-search");
-    modal = document.getElementById("movie-modal");
-    modalTitle = document.getElementById("modal-title");
-    modalSynopsis = document.getElementById("modal-synopsis");
-    modalRating = document.getElementById("modal-rating");
-    modalAge = document.getElementById("modal-age-rating");
-    trailer = document.getElementById("movie-trailer");
-    favoriteBtn = document.getElementById("favorite-btn");
-    watchedBtn = document.getElementById("watched-btn");
-    likeBtn = document.getElementById("like-btn");
-    dislikeBtn = document.getElementById("dislike-btn");
-}
-
-function salvarDados() {
-    localStorage.setItem("popcorn_favs", JSON.stringify(favoritos));
-    localStorage.setItem("popcorn_watched", JSON.stringify(vistos));
-    localStorage.setItem("popcorn_likes", JSON.stringify(likes));
-    localStorage.setItem("popcorn_dislikes", JSON.stringify(dislikes));
-}
-
-function criarCard(filme) {
-    const card = document.createElement("article");
-    const favorito = favoritos.includes(filme.id);
-    const visto = vistos.includes(filme.id);
-
-    card.className = "movie-card";
-    card.dataset.id = filme.id;
-
-    card.innerHTML = `
-        <div class="movie-poster">
-            <img src="${filme.capa}" alt="Poster de ${filme.titulo}" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">
-            <span class="age-badge age-${filme.classificacao}">${filme.classificacao}</span>
-            ${visto ? `<span class="watched-badge">✓ Visto</span>` : ""}
-            <div class="movie-overlay">
-                <span class="movie-genre">${filme.generoNome}</span>
-                <button type="button" class="card-favorite ${favorito ? "active" : ""}" data-favorite="${filme.id}" aria-label="Favoritar" aria-pressed="${favorito}">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                </button>
-                <button type="button" class="details-btn" data-details="${filme.id}">▶ Ver detalhes</button>
-            </div>
-        </div>
-        <div class="movie-card-content">
-            <h3>${filme.titulo}</h3>
-            <div class="movie-card-meta">
-                <span class="movie-rating">⭐ ${filme.nota}</span>
-                <span>${filme.generoNome}</span>
-            </div>
-        </div>
-    `;
-
-    return card;
-}
-
-function renderizarFilmes(lista) {
-    if (!movieGrid) return;
-    movieGrid.innerHTML = "";
-
-    if (lista.length === 0) {
-        movieGrid.innerHTML = `<p class="empty-message">🎬 Nenhum filme encontrado.</p>`;
-        return;
-    }
-
-    lista.forEach(filme => movieGrid.appendChild(criarCard(filme)));
-}
-
-function renderizarFavoritos() {
-    if (!favoritesGrid) return;
-    favoritesGrid.innerHTML = "";
-
-    const lista = filmes.filter(filme => favoritos.includes(filme.id));
-
-    if (lista.length === 0) {
-        if (emptyFavorites) emptyFavorites.style.display = "block";
-        return;
-    }
-
-    if (emptyFavorites) emptyFavorites.style.display = "none";
-    lista.forEach(filme => favoritesGrid.appendChild(criarCard(filme)));
-}
-
-function atualizarCatalogo() {
-    const termo = searchInput ? searchInput.value.trim().toLowerCase() : "";
-
-    const resultado = filmes.filter(filme => {
-        const generoOK = generoAtual === "all" || filme.genero === generoAtual;
-        const buscaOK = filme.titulo.toLowerCase().includes(termo) || filme.generoNome.toLowerCase().includes(termo);
-        return generoOK && buscaOK;
-    });
-
-    renderizarFilmes(resultado);
-}
-
-function abrirModal(id) {
-    const filme = filmes.find(item => item.id === Number(id));
-    if (!filme || !modal) return;
-
-    filmeAtual = filme;
-
-    if (modalTitle) modalTitle.textContent = filme.titulo;
-    if (modalSynopsis) modalSynopsis.textContent = filme.sinopse;
-    if (modalRating) modalRating.textContent = `⭐ ${filme.nota}`;
-    if (modalAge) modalAge.textContent = `Classificação: ${filme.classificacao}`;
-    if (trailer) trailer.src = `https://www.youtube.com/embed/${filme.trailerId}?autoplay=1&rel=0`;
-
-    atualizarBotoes();
-    modal.classList.add("active");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-}
-
-function fecharModal() {
-    if (!modal) return;
-    modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    if (trailer) trailer.src = "";
-    filmeAtual = null;
-}
-
-function atualizarBotoes() {
-    if (!filmeAtual) return;
-    const id = filmeAtual.id;
-
-    if (favoriteBtn) {
-        const ativo = favoritos.includes(id);
-        favoriteBtn.classList.toggle("active", ativo);
-        favoriteBtn.setAttribute("aria-pressed", ativo);
-    }
-    if (watchedBtn) {
-        const ativo = vistos.includes(id);
-        watchedBtn.classList.toggle("active", ativo);
-        watchedBtn.setAttribute("aria-pressed", ativo);
-    }
-    if (likeBtn) likeBtn.classList.toggle("active", likes.includes(id));
-    if (dislikeBtn) dislikeBtn.classList.toggle("active", dislikes.includes(id));
-}
-
-function alternarFavorito(id) {
-    id = Number(id);
-    favoritos = favoritos.includes(id) ? favoritos.filter(item => item !== id) : [...favoritos, id];
-    salvarDados();
-    atualizarCatalogo();
-    renderizarFavoritos();
-    atualizarBotoes();
-}
-
-function alternarVisto() {
-    if (!filmeAtual) return;
-    const id = filmeAtual.id;
-    vistos = vistos.includes(id) ? vistos.filter(item => item !== id) : [...vistos, id];
-    salvarDados();
-    atualizarCatalogo();
-    renderizarFavoritos();
-    atualizarBotoes();
-}
-
-function alternarLike() {
-    if (!filmeAtual) return;
-    const id = filmeAtual.id;
-    dislikes = dislikes.filter(item => item !== id);
-    likes = likes.includes(id) ? likes.filter(item => item !== id) : [...likes, id];
-    salvarDados();
-    atualizarBotoes();
-}
-
-function alternarDislike() {
-    if (!filmeAtual) return;
-    const id = filmeAtual.id;
-    likes = likes.filter(item => item !== id);
-    dislikes = dislikes.includes(id) ? dislikes.filter(item => item !== id) : [...dislikes, id];
-    salvarDados();
-    atualizarBotoes();
-}
-
-document.addEventListener("click", function (e) {
-    const btnDet = e.target.closest("[data-details]");
-    if (btnDet) {
-        abrirModal(btnDet.dataset.details);
-        return;
-    }
-
-    const btnFav = e.target.closest("[data-favorite]");
-    if (btnFav) {
-        alternarFavorito(btnFav.dataset.favorite);
-        return;
-    }
-
-    const btnGenre = e.target.closest(".genre-btn");
-    if (btnGenre) {
-        document.querySelectorAll(".genre-btn").forEach(btn => btn.classList.remove("active"));
-        btnGenre.classList.add("active");
-        generoAtual = btnGenre.dataset.genre;
-        atualizarCatalogo();
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    carregarElementosDOM();
-    if (searchInput) {
-        searchInput.addEventListener("input", atualizarCatalogo);
-    }
-    atualizarCatalogo();
-    renderizarFavoritos();
-});
