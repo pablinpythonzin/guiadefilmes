@@ -11,7 +11,7 @@ const filmes = [
         sinopse: "Peter Parker precisa lidar com as consequências de sua identidade revelada e acaba enfrentando ameaças de outros universos.",
         classificacao: "12",
         nota: "8.7",
-        capa: "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+        capa: "https://m.media-amazon.com/images/M/MV5BMWJjNWJhMDctYTVlNy00ZmJjLWIxNWUtNmZhMWQ3ZGJiYzVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         trailerId: "JfVOs4VSpmA"
     },
     {
@@ -22,7 +22,7 @@ const filmes = [
         sinopse: "Riley está entrando na adolescência e novas emoções aparecem em sua mente.",
         classificacao: "L",
         nota: "8.5",
-        capa: "https://image.tmdb.org/t/p/w500/9b2h9j48H4d2f0vY0p7Kqg9p44S.jpg",
+        capa: "https://m.media-amazon.com/images/M/MV5BYzc1NWRkMDktYmJhYy00NGFiLTg4MjItMDA3MDAzNDhhMTEyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         trailerId: "LEjhY15eCx0"
     },
     {
@@ -33,7 +33,7 @@ const filmes = [
         sinopse: "Um grupo de astronautas parte em uma missão através de um buraco de minhoca em busca de um novo lar para a humanidade.",
         classificacao: "10",
         nota: "8.7",
-        capa: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+        capa: "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA0LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         trailerId: "zSWdZVtXT7E"
     },
     {
@@ -44,7 +44,7 @@ const filmes = [
         sinopse: "Batman investiga uma série de crimes cometidos por um misterioso assassino em Gotham City.",
         classificacao: "14",
         nota: "8.0",
-        capa: "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+        capa: "https://m.media-amazon.com/images/M/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDgtMzNiNjdhNWFlM2JkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         trailerId: "mqqft2x_Aa4"
     },
     {
@@ -55,7 +55,7 @@ const filmes = [
         sinopse: "Arthur Fleck é um homem ignorado pela sociedade que inicia uma transformação que mudará Gotham para sempre.",
         classificacao: "16",
         nota: "8.4",
-        capa: "https://image.tmdb.org/t/p/w500/udDclC23zEkBhNvChFfsUt0YqO.jpg",
+        capa: "https://m.media-amazon.com/images/M/MV5BNGVjNzk4ZGUtZWBlZi00YTlhLTgyMjUtODkxZTNlLBkY2ZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         trailerId: "zAGVQLHvwOY"
     },
     {
@@ -66,7 +66,7 @@ const filmes = [
         sinopse: "Jake Sully e sua família enfrentam novas ameaças enquanto procuram segurança entre os povos dos oceanos de Pandora.",
         classificacao: "12",
         nota: "7.6",
-        capa: "https://image.tmdb.org/t/p/w500/mbYQLLW75SpwFAflF954WDfd9Bh.jpg",
+        capa: "https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctN2ZiOC00YjVlLWFlNzAtNTVhNzM1YjUyMjVkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         trailerId: "d9MyW72ELq0"
     },
     {
@@ -77,7 +77,7 @@ const filmes = [
         sinopse: "A história do físico J. Robert Oppenheimer e de sua participação no desenvolvimento da bomba atômica.",
         classificacao: "16",
         nota: "8.6",
-        capa: "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGvjWd1sCYw.jpg",
+        capa: "https://m.media-amazon.com/images/M/MV5BN2JkMDc5MGQtZGVlk00MGEwLTgwNmUtNTE5YzA5ZGE5ZmY0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         trailerId: "uYPbbksJxIg"
     },
     {
@@ -88,7 +88,7 @@ const filmes = [
         sinopse: "Dois agentes do FBI precisam se disfarçar como duas socialites para protegê-las e acabam vivendo situações hilárias.",
         classificacao: "12",
         nota: "7.0",
-        capa: "https://image.tmdb.org/t/p/w500/1X6h4fP37W2xS9vA9oK0jW8W6.jpg",
+        capa: "https://m.media-amazon.com/images/M/MV5BMTY3NjA1NDcxN15BMl5BanBnXkFtZTcwNDA2OTgyMQ@@._V1_FMjpg_UX1000_.jpg",
         trailerId: "aeVkbNka9HM"
     }
 ];
