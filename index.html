@@ -1,539 +1,90 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Popcorn Hub — descubra, avalie, favorite e acompanhe seus filmes favoritos."
-    >
-
-    <meta name="theme-color" content="#070709">
-
-    <title>🍿 Popcorn Hub</title>
-
+    <title>Popcorn Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
-
     <header class="site-header">
-
         <div class="header-content">
-
-            <a href="#" class="logo" aria-label="Popcorn Hub">
-                🍿 <span>Popcorn Hub</span>
-            </a>
-
-            <form class="search-form" role="search">
-
-                <label for="movie-search" class="sr-only">
-                    Buscar filmes
-                </label>
-
-                <input
-                    type="search"
-                    id="movie-search"
-                    name="search"
-                    placeholder="🔎 Buscar filmes..."
-                    autocomplete="off"
-                >
-
+            <a href="#" class="logo">🍿 <span>Popcorn Hub</span></a>
+            
+            <form class="search-form" onsubmit="event.preventDefault();">
+                <input type="text" id="movie-search" placeholder="Buscar filmes...">
             </form>
 
-            <nav
-                class="genre-filters"
-                aria-label="Filtros por gênero"
-            >
-
-                <button
-                    type="button"
-                    class="genre-btn active"
-                    data-genre="all"
-                >
-                    Todos
-                </button>
-
-                <button
-                    type="button"
-                    class="genre-btn"
-                    data-genre="action"
-                >
-                    Ação
-                </button>
-
-                <button
-                    type="button"
-                    class="genre-btn"
-                    data-genre="comedy"
-                >
-                    Comédia
-                </button>
-
-                <button
-                    type="button"
-                    class="genre-btn"
-                    data-genre="drama"
-                >
-                    Drama
-                </button>
-
-                <button
-                    type="button"
-                    class="genre-btn"
-                    data-genre="sci-fi"
-                >
-                    Sci-Fi
-                </button>
-
-            </nav>
-
+            <div class="genre-filters">
+                <button class="genre-btn active" data-genre="all">Todos</button>
+                <button class="genre-btn" data-genre="action">Ação</button>
+                <button class="genre-btn" data-genre="comedy">Comédia</button>
+                <button class="genre-btn" data-genre="drama">Drama</button>
+                <button class="genre-btn" data-genre="sci-fi">Sci-Fi</button>
+            </div>
         </div>
-
     </header>
 
-
-    <!-- =====================================================
-         BANNER PRINCIPAL
-    ====================================================== -->
-
     <section class="hero-banner">
-
         <div class="hero-content">
-
-            <span class="hero-badge">
-                🍿 POPCORN HUB
-            </span>
-
-            <h2>
-                O melhor do cinema
-                em um só lugar
-            </h2>
-
-            <p>
-                Descubra novos filmes, confira trailers,
-                avalie seus favoritos e monte sua própria
-                coleção cinematográfica.
-            </p>
-
-            <a
-                href="#movies-title"
-                class="hero-btn"
-            >
-                🎬 Explorar filmes
-            </a>
-
+            <span class="hero-badge">POPCORN HUB</span>
+            <h2>O melhor do cinema em um só lugar</h2>
+            <p>Descubra novos filmes, confira trailers, avalie seus favoritos e monte sua própria coleção cinematográfica.</p>
+            <a href="#catalogo" class="hero-btn">Explorar filmes</a>
         </div>
-
     </section>
 
-
-    <!-- =====================================================
-         CONTEÚDO PRINCIPAL
-    ====================================================== -->
-
-    <main>
-
-        <!-- FILMES -->
-
-        <section
-            class="movies-section"
-            aria-labelledby="movies-title"
-        >
-
+    <main id="catalogo">
+        <section class="movies-section">
             <div class="section-header">
-
-                <div>
-                    <span class="section-kicker">
-                        CATÁLOGO
-                    </span>
-
-                    <h2 id="movies-title">
-                        🎬 Filmes
-                    </h2>
-                </div>
-
+                <h2>🎬 Filmes</h2>
             </div>
-
-            <div
-                id="movie-grid"
-                class="movie-grid"
-            >
-                <!--
-                    Os cards serão inseridos pelo JavaScript.
-                    Exemplo de imagem:
-                    images/filme.jpg
-                -->
-            </div>
-
+            <div id="movie-grid" class="movie-grid"></div>
         </section>
 
-
-        <!-- =================================================
-             FAVORITOS
-        ================================================== -->
-
-        <section
-            id="favorites-section"
-            class="favorites-section"
-            aria-labelledby="favorites-title"
-        >
-
+        <section class="favorites-section">
             <div class="section-header">
-
-                <div>
-
-                    <span class="section-kicker">
-                        SUA COLEÇÃO
-                    </span>
-
-                    <h2 id="favorites-title">
-                        ❤️ Meus Favoritos
-                    </h2>
-
-                </div>
-
+                <h2>❤️ Meus Favoritos</h2>
             </div>
-
-            <div
-                id="favorites-grid"
-                class="movie-grid"
-            >
-                <!-- Favoritos inseridos pelo JavaScript -->
-            </div>
-
-            <p
-                id="empty-favorites"
-                class="empty-message"
-            >
-                ❤️ Você ainda não adicionou nenhum filme
-                aos favoritos.
-            </p>
-
+            <p id="empty-favorites" class="empty-message">❤️ Você ainda não adicionou nenhum filme aos favoritos.</p>
+            <div id="favorites-grid" class="movie-grid"></div>
         </section>
-
     </main>
 
-
-    <!-- =====================================================
-         MODAL DE DETALHES
-    ====================================================== -->
-
-    <div
-        id="movie-modal"
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-        aria-hidden="true"
-    >
-
-        <div
-            class="modal-overlay"
-            data-close-modal
-        ></div>
-
-
+    <div id="movie-modal" class="modal" aria-hidden="true">
+        <div class="modal-overlay" onclick="fecharModal()"></div>
         <div class="modal-content">
-
-            <button
-                type="button"
-                class="modal-close"
-                aria-label="Fechar detalhes do filme"
-                data-close-modal
-            >
-                &times;
-            </button>
-
-
-            <!-- TRAILER -->
-
+            <button class="modal-close" onclick="fecharModal()">&times;</button>
+            
             <div class="trailer-container">
-
-                <iframe
-                    id="movie-trailer"
-                    src=""
-                    title="Trailer do filme"
-                    loading="lazy"
-                    allow="
-                        accelerometer;
-                        autoplay;
-                        clipboard-write;
-                        encrypted-media;
-                        gyroscope;
-                        picture-in-picture
-                    "
-                    allowfullscreen
-                ></iframe>
-
+                <iframe id="movie-trailer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
-
-
-            <!-- DETALHES -->
 
             <div class="movie-details">
-
                 <div class="movie-info">
-
-                    <span class="section-kicker">
-                        DETALHES DO FILME
-                    </span>
-
-                    <h2 id="modal-title">
-                        Título do filme
-                    </h2>
-
-
+                    <h2 id="modal-title"></h2>
                     <div class="movie-meta">
-
-                        <span id="modal-rating">
-                            ⭐ 0.0
-                        </span>
-
-                        <span id="modal-age-rating">
-                            Classificação: Livre
-                        </span>
-
+                        <span id="modal-rating"></span>
+                        <span id="modal-age-rating"></span>
                     </div>
-
-
-                    <p id="modal-synopsis">
-                        Sinopse do filme.
-                    </p>
-
+                    <p id="modal-synopsis"></p>
                 </div>
 
-
-                <!-- AÇÕES -->
-
-                <div
-                    class="movie-actions"
-                    aria-label="Ações do filme"
-                >
-
-                    <!-- FAVORITO -->
-
-                    <button
-                        type="button"
-                        class="action-btn"
-                        id="favorite-btn"
-                        title="Favoritar"
-                        aria-label="Favoritar filme"
-                    >
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="
-                                    M20.84 4.61
-                                    a5.5 5.5 0 0 0-7.78 0
-                                    L12 5.67
-                                    l-1.06-1.06
-                                    a5.5 5.5 0 0 0-7.78 7.78
-                                    L12 21.23
-                                    l8.84-8.84
-                                    a5.5 5.5 0 0 0 0-7.78z
-                                "
-                            />
-                        </svg>
-
-                        <span>
-                            Favoritar
-                        </span>
-
-                    </button>
-
-
-                    <!-- VISTO -->
-
-                    <button
-                        type="button"
-                        class="action-btn"
-                        id="watched-btn"
-                        title="Marcar como visto"
-                        aria-label="Marcar filme como visto"
-                    >
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="
-                                    M1 12s4-8 11-8
-                                    11 8 11 8
-                                    -4 8-11 8
-                                    S1 12 1 12z
-                                "
-                            />
-
-                            <circle
-                                cx="12"
-                                cy="12"
-                                r="3"
-                            />
-
-                        </svg>
-
-                        <span>
-                            Visto
-                        </span>
-
-                    </button>
-
-
-                    <!-- LIKE -->
-
-                    <button
-                        type="button"
-                        class="action-btn"
-                        id="like-btn"
-                        title="Curtir"
-                        aria-label="Curtir filme"
-                    >
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="
-                                    M14 9V5
-                                    a3 3 0 0 0-3-3
-                                    l-4 9v9
-                                    h11.28
-                                    a2 2 0 0 0 2-1.7
-                                    l1.38-9
-                                    a2 2 0 0 0-2-2.3z
-                                "
-                            />
-
-                            <path
-                                d="
-                                    M7 11H4
-                                    a2 2 0 0 0-2 2v5
-                                    a2 2 0 0 0 2 2h3
-                                "
-                            />
-
-                        </svg>
-
-                        <span>
-                            Like
-                        </span>
-
-                    </button>
-
-
-                    <!-- DISLIKE -->
-
-                    <button
-                        type="button"
-                        class="action-btn"
-                        id="dislike-btn"
-                        title="Não gostei"
-                        aria-label="Não gostei do filme"
-                    >
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="
-                                    M10 15v4
-                                    a3 3 0 0 0 3 3
-                                    l4-9V4
-                                    H5.72
-                                    a2 2 0 0 0-2 1.7
-                                    l-1.38 9
-                                    a2 2 0 0 0 2 2.3z
-                                "
-                            />
-
-                            <path
-                                d="
-                                    M17 13h3
-                                    a2 2 0 0 0 2-2V6
-                                    a2 2 0 0 0-2-2h-3
-                                "
-                            />
-
-                        </svg>
-
-                        <span>
-                            Dislike
-                        </span>
-
-                    </button>
-
+                <div class="movie-actions">
+                    <button id="favorite-btn" class="action-btn" onclick="alternarFavorito(filmeAtual.id)">Favorito</button>
+                    <button id="watched-btn" class="action-btn" onclick="alternarVisto()">Visto</button>
+                    <button id="like-btn" class="action-btn" onclick="alternarLike()">Gostei</button>
+                    <button id="dislike-btn" class="action-btn" onclick="alternarDislike()">Não Gostei</button>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
     <footer class="site-footer">
-
-        <p>
-            &copy; 2026
-            <strong>Popcorn Hub</strong>.
-        </p>
-
-        <p>
-            Desenvolvido por
-            <strong>Luã</strong>,
-            <strong>Matheus</strong>
-            e
-            <strong>Pablo</strong>.
-        </p>
-
+        <p><strong>Popcorn Hub</strong> &copy; Todos os direitos reservados.</p>
     </footer>
 
-
-    <!-- JAVASCRIPT -->
-
     <script src="script.js"></script>
-
 </body>
 </html>
-```
