@@ -1,13 +1,55 @@
-```css
-/* =========================================================
-   POPCORN HUB — STYLE.CSS
-   Tema: Cinema / Streaming
-   CSS3 puro — sem frameworks
-   ========================================================= */
+/* ============================================================
+   🍿 POPCORN HUB — STYLE.CSS
+   CSS3 PURO | CINEMA / STREAMING
+   ============================================================ */
 
-/* =========================================================
-   1. RESET E CONFIGURAÇÕES GERAIS
-   ========================================================= */
+
+/* ============================================================
+   01 — VARIÁVEIS
+   ============================================================ */
+
+:root {
+    --bg: #08080a;
+    --bg-2: #0e0e11;
+    --bg-3: #151519;
+
+    --card: #18181d;
+    --card-hover: #222229;
+
+    --white: #ffffff;
+    --text: #eeeeee;
+    --text-2: #b6b6bd;
+    --muted: #777780;
+
+    --red: #e50914;
+    --red-light: #ff303a;
+    --red-dark: #a5070f;
+
+    --gold: #f5c518;
+    --gold-light: #ffdc5a;
+
+    --green: #35d65a;
+    --yellow: #f5c518;
+
+    --border: rgba(255, 255, 255, .08);
+    --border-hover: rgba(229, 9, 20, .45);
+
+    --shadow:
+        0 12px 35px rgba(0, 0, 0, .45);
+
+    --shadow-hover:
+        0 25px 65px rgba(0, 0, 0, .75);
+
+    --radius: 14px;
+    --radius-sm: 8px;
+
+    --speed: .25s;
+}
+
+
+/* ============================================================
+   02 — RESET
+   ============================================================ */
 
 * {
     margin: 0;
@@ -21,22 +63,47 @@ html {
 
 body {
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #121212;
-    color: #f5f5f5;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(229, 9, 20, .15),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #09090b 0%,
+            #08080a 100%
+        );
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
     line-height: 1.6;
+
+    overflow-x: hidden;
 }
 
 button,
 input,
-textarea,
-select {
+select,
+textarea {
     font: inherit;
 }
 
 button {
-    border: none;
+    border: 0;
     cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 a {
@@ -44,278 +111,662 @@ a {
     text-decoration: none;
 }
 
-img,
-svg {
-    display: block;
-}
 
-img {
-    max-width: 100%;
-}
+/* ============================================================
+   03 — SELEÇÃO
+   ============================================================ */
 
-
-/* =========================================================
-   2. VARIÁVEIS DO TEMA
-   ========================================================= */
-
-:root {
-    --bg-primary: #121212;
-    --bg-secondary: #181818;
-    --bg-card: #1e1e1e;
-    --bg-card-hover: #252525;
-
-    --text-primary: #f5f5f5;
-    --text-secondary: #b8b8b8;
-    --text-muted: #777;
-
-    --red: #e50914;
-    --red-dark: #b20710;
-    --red-light: #ff3039;
-
-    --gold: #f5c518;
-    --gold-light: #ffd84d;
-
-    --green: #35c759;
-    --yellow: #f5c518;
-
-    --border: rgba(255, 255, 255, 0.08);
-
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-    --shadow-hover: 0 18px 45px rgba(0, 0, 0, 0.7);
-
-    --radius-small: 6px;
-    --radius-medium: 10px;
-    --radius-large: 16px;
-
-    --transition: 0.25s ease;
+::selection {
+    background: var(--red);
+    color: #fff;
 }
 
 
-/* =========================================================
-   3. CABEÇALHO
-   ========================================================= */
+/* ============================================================
+   04 — SCROLLBAR
+   ============================================================ */
 
-.header {
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #060607;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #36363d;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--red);
+}
+
+
+/* ============================================================
+   05 — CABEÇALHO
+   ============================================================ */
+
+header {
     position: sticky;
     top: 0;
-    z-index: 100;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    z-index: 999;
 
     width: 100%;
-    min-height: 72px;
-    padding: 14px 5%;
 
-    background: rgba(18, 18, 18, 0.94);
-    border-bottom: 1px solid var(--border);
+    background:
+        rgba(8, 8, 10, .88);
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
+    border-bottom:
+        1px solid var(--border);
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    color: var(--text-primary);
-    font-size: 1.45rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-
-    white-space: nowrap;
-}
-
-.logo svg {
-    width: 32px;
-    height: 32px;
-
-    fill: var(--red);
+    box-shadow:
+        0 5px 30px rgba(0, 0, 0, .35);
 
     transition:
-        transform var(--transition),
-        fill var(--transition);
+        background var(--speed) ease;
 }
 
-.logo:hover svg {
-    transform: rotate(-8deg) scale(1.1);
-    fill: var(--gold);
+header:hover {
+    background:
+        rgba(8, 8, 10, .95);
 }
 
-.logo span {
+
+/* ============================================================
+   06 — TÍTULO / LOGO
+   ============================================================ */
+
+h1 {
+    width: min(1250px, 92%);
+
+    margin: 0 auto;
+
+    padding:
+        25px 0 14px;
+
+    color: var(--white);
+
+    font-size:
+        clamp(1.8rem, 4vw, 2.7rem);
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, .4);
+}
+
+h1::first-letter {
     color: var(--red);
 }
 
 
-/* =========================================================
-   4. NAVEGAÇÃO
-   ========================================================= */
+/* ============================================================
+   07 — PESQUISA
+   ============================================================ */
 
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-}
+#searchInput {
+    display: block;
 
-.nav a {
-    position: relative;
+    width: min(650px, 92%);
 
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    font-weight: 600;
+    height: 50px;
+
+    margin:
+        0 auto 18px;
+
+    padding:
+        0 18px;
+
+    background:
+        rgba(255, 255, 255, .055);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-sm);
+
+    color: var(--white);
+
+    outline: none;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.03);
 
     transition:
-        color var(--transition);
+        background var(--speed) ease,
+        border-color var(--speed) ease,
+        box-shadow var(--speed) ease,
+        transform var(--speed) ease;
 }
 
-.nav a::after {
+#searchInput::placeholder {
+    color: var(--muted);
+}
+
+#searchInput:hover {
+    background:
+        rgba(255,255,255,.075);
+}
+
+#searchInput:focus {
+    border-color: var(--red);
+
+    background:
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 0 3px rgba(229,9,20,.13),
+        0 12px 30px rgba(0,0,0,.25);
+}
+
+
+/* ============================================================
+   08 — FILTROS
+   ============================================================ */
+
+#genreFilters {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    width: min(1250px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        0 0 24px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+#genreFilters::-webkit-scrollbar {
+    display: none;
+}
+
+#genreFilters button {
+    flex: 0 0 auto;
+
+    padding:
+        9px 17px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    color:
+        var(--text-2);
+
+    font-size:
+        .88rem;
+
+    font-weight:
+        700;
+
+    transition:
+        all var(--speed) ease;
+}
+
+#genreFilters button:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(255,255,255,.10);
+
+    color:
+        var(--white);
+
+    border-color:
+        rgba(229,9,20,.4);
+}
+
+#genreFilters button.active,
+#genreFilters button.selected {
+    background:
+        linear-gradient(
+            135deg,
+            var(--red),
+            var(--red-dark)
+        );
+
+    border-color:
+        var(--red);
+
+    color:
+        #fff;
+
+    box-shadow:
+        0 7px 22px rgba(229,9,20,.25);
+}
+
+
+/* ============================================================
+   09 — CONTEÚDO PRINCIPAL
+   ============================================================ */
+
+main {
+    width: min(1250px, 92%);
+
+    margin: 0 auto;
+
+    padding:
+        18px 0 80px;
+}
+
+
+/* ============================================================
+   10 — TÍTULOS DAS SEÇÕES
+   ============================================================ */
+
+h2 {
+    position: relative;
+
+    margin:
+        38px 0 22px;
+
+    padding-left:
+        16px;
+
+    color:
+        var(--white);
+
+    font-size:
+        clamp(1.35rem, 3vw, 1.9rem);
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -.5px;
+}
+
+h2::before {
     content: "";
 
     position: absolute;
+
     left: 0;
-    bottom: -7px;
+    top: 50%;
 
-    width: 0;
-    height: 2px;
+    width: 5px;
+    height: 28px;
 
-    background: var(--red);
+    transform:
+        translateY(-50%);
 
-    transition: width var(--transition);
+    background:
+        linear-gradient(
+            180deg,
+            var(--red-light),
+            var(--red-dark)
+        );
+
+    border-radius:
+        99px;
+
+    box-shadow:
+        0 0 18px rgba(229,9,20,.4);
 }
 
-.nav a:hover {
-    color: var(--text-primary);
-}
 
-.nav a:hover::after {
+/* ============================================================
+   11 — GRID
+   ============================================================ */
+
+#moviesGrid,
+#favoritesGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(190px, 1fr)
+        );
+
+    gap: 24px;
+
     width: 100%;
 }
 
 
-/* =========================================================
-   5. BOTÕES
-   ========================================================= */
+/* ============================================================
+   12 — CARD
+   ============================================================ */
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+.movie-card {
+    position: relative;
 
-    min-height: 42px;
-    padding: 9px 18px;
+    overflow: hidden;
 
-    border-radius: var(--radius-small);
+    min-width: 0;
 
-    font-weight: 700;
-    color: var(--text-primary);
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b20,
+            #111114
+        );
 
-    background: #292929;
+    border:
+        1px solid var(--border);
 
-    transition:
-        transform var(--transition),
-        background var(--transition),
-        color var(--transition),
-        box-shadow var(--transition);
-}
+    border-radius:
+        var(--radius);
 
-.btn:hover {
-    transform: translateY(-2px);
-    background: #353535;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
-}
+    box-shadow:
+        var(--shadow);
 
-.btn-primary {
-    background: var(--red);
-}
+    isolation: isolate;
 
-.btn-primary:hover {
-    background: var(--red-light);
-    box-shadow: 0 8px 24px rgba(229, 9, 20, 0.3);
-}
-
-.btn-gold {
-    background: var(--gold);
-    color: #111;
-}
-
-.btn-gold:hover {
-    background: var(--gold-light);
-}
-
-
-/* =========================================================
-   6. ÍCONES SVG
-   ========================================================= */
-
-.icon {
-    width: 20px;
-    height: 20px;
-
-    fill: currentColor;
+    transform:
+        translateZ(0);
 
     transition:
-        transform var(--transition),
-        color var(--transition),
-        fill var(--transition);
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease,
+        background .35s ease;
 }
 
-button:hover .icon,
-.btn:hover .icon {
-    transform: scale(1.1);
+.movie-card:hover {
+    transform:
+        translateY(-9px)
+        scale(1.018);
+
+    background:
+        var(--card-hover);
+
+    border-color:
+        var(--border-hover);
+
+    box-shadow:
+        var(--shadow-hover),
+        0 0 35px rgba(229,9,20,.08);
 }
 
 
-/* =========================================================
-   7. BOTÃO DE FAVORITO
-   ========================================================= */
+/* ============================================================
+   13 — POSTER
+   ============================================================ */
+
+.movie-card img {
+    width: 100%;
+
+    aspect-ratio:
+        2 / 3;
+
+    object-fit:
+        cover;
+
+    background:
+        #050505;
+
+    transition:
+        transform .6s cubic-bezier(.2,.7,.2,1),
+        filter .45s ease;
+}
+
+.movie-card:hover img {
+    transform:
+        scale(1.08);
+
+    filter:
+        brightness(.72)
+        saturate(1.15);
+}
+
+
+/* ============================================================
+   14 — OVERLAY CINEMATOGRÁFICO
+   ============================================================ */
+
+.movie-card::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 55%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.55),
+            transparent
+        );
+
+    opacity: .8;
+}
+
+
+/* ============================================================
+   15 — BRILHO
+   ============================================================ */
+
+.movie-card::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 4;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 25%,
+            rgba(255,255,255,.08) 48%,
+            transparent 65%
+        );
+
+    transform:
+        translateX(-130%);
+
+    transition:
+        transform .75s ease;
+}
+
+.movie-card:hover::after {
+    transform:
+        translateX(130%);
+}
+
+
+/* ============================================================
+   16 — CONTEÚDO
+   ============================================================ */
+
+.movie-card-content {
+    position: relative;
+
+    z-index: 5;
+
+    padding:
+        15px;
+}
+
+.movie-card h3 {
+    margin-bottom:
+        5px;
+
+    color:
+        var(--white);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        850;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+}
+
+.movie-card p {
+    color:
+        var(--text-2);
+
+    font-size:
+        .83rem;
+}
+
+
+/* ============================================================
+   17 — NOTA
+   ============================================================ */
+
+.rating {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    color:
+        var(--gold);
+
+    font-weight:
+        800;
+}
+
+.rating svg {
+    width:
+        16px;
+
+    height:
+        16px;
+
+    fill:
+        var(--gold);
+}
+
+
+/* ============================================================
+   18 — FAVORITO
+   ============================================================ */
 
 .favorite-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
 
-    width: 42px;
-    height: 42px;
+    top: 12px;
+    right: 12px;
 
-    border: 1px solid var(--border);
-    border-radius: 50%;
+    z-index: 10;
 
-    background: rgba(0, 0, 0, 0.55);
-    color: #fff;
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        41px;
+
+    height:
+        41px;
+
+    border:
+        1px solid rgba(255,255,255,.14);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0,0,0,.65);
+
+    color:
+        #fff;
+
+    backdrop-filter:
+        blur(8px);
 
     transition:
-        transform var(--transition),
-        background var(--transition),
-        color var(--transition),
-        border-color var(--transition);
+        transform var(--speed) ease,
+        background var(--speed) ease,
+        color var(--speed) ease,
+        border-color var(--speed) ease;
 }
 
 .favorite-btn:hover {
-    transform: scale(1.08);
-    border-color: rgba(229, 9, 20, 0.5);
-    color: var(--red);
+    transform:
+        scale(1.12);
+
+    background:
+        rgba(229,9,20,.18);
+
+    color:
+        var(--red-light);
+
+    border-color:
+        rgba(229,9,20,.5);
 }
 
 .favorite-btn.active {
-    background: rgba(229, 9, 20, 0.15);
-    color: var(--red);
+    color:
+        var(--red);
+
+    background:
+        rgba(229,9,20,.18);
+
+    border-color:
+        rgba(229,9,20,.4);
+
+    animation:
+        heartPop .35s ease;
 }
 
-.favorite-btn.active .icon {
-    fill: var(--red);
-    animation: heartPop 0.35s ease;
+.favorite-btn.active svg {
+    fill:
+        var(--red);
 }
 
 @keyframes heartPop {
     0% {
-        transform: scale(0.7);
+        transform: scale(.7);
     }
 
-    60% {
+    55% {
         transform: scale(1.3);
     }
 
@@ -325,730 +776,863 @@ button:hover .icon,
 }
 
 
-/* =========================================================
-   8. BOTÃO LIKE
-   ========================================================= */
+/* ============================================================
+   19 — CLASSIFICAÇÃO
+   ============================================================ */
 
-.like-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
+.badge,
+.classification {
+    display:
+        inline-flex;
 
-    padding: 8px 14px;
+    align-items:
+        center;
 
-    border-radius: var(--radius-small);
+    justify-content:
+        center;
 
-    background: #292929;
-    color: var(--text-secondary);
+    min-width:
+        32px;
 
-    transition:
-        transform var(--transition),
-        background var(--transition),
-        color var(--transition);
+    min-height:
+        25px;
+
+    padding:
+        4px 8px;
+
+    border-radius:
+        5px;
+
+    font-size:
+        .73rem;
+
+    font-weight:
+        900;
+
+    line-height:
+        1;
 }
 
-.like-btn:hover {
-    transform: translateY(-2px);
-    color: var(--green);
-}
+.badge-livre,
+.classification-livre {
+    background:
+        var(--green);
 
-.like-btn.active {
-    background: rgba(53, 199, 89, 0.12);
-    color: var(--green);
-}
-
-.like-btn.active .icon {
-    fill: var(--green);
-    animation: likePop 0.3s ease;
-}
-
-@keyframes likePop {
-    0% {
-        transform: scale(0.8);
-    }
-
-    50% {
-        transform: scale(1.25);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-
-/* =========================================================
-   9. GRID DE FILMES
-   ========================================================= */
-
-.movies-grid {
-    display: grid;
-
-    grid-template-columns: repeat(
-        auto-fill,
-        minmax(190px, 1fr)
-    );
-
-    gap: 24px;
-
-    width: min(1200px, 90%);
-    margin: 40px auto;
-}
-
-
-/* =========================================================
-   10. CARD DE FILME
-   ========================================================= */
-
-.movie-card {
-    position: relative;
-    overflow: hidden;
-
-    min-width: 0;
-
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-medium);
-
-    box-shadow: var(--shadow);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.movie-card:hover {
-    transform: translateY(-7px) scale(1.02);
-
-    border-color: rgba(229, 9, 20, 0.35);
-
-    box-shadow: var(--shadow-hover);
-}
-
-.movie-card img {
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
-
-    transition:
-        transform 0.45s ease,
-        filter 0.45s ease;
-}
-
-.movie-card:hover img {
-    transform: scale(1.05);
-    filter: brightness(0.8);
-}
-
-
-/* =========================================================
-   11. CONTEÚDO DO CARD
-   ========================================================= */
-
-.movie-card-content {
-    padding: 15px;
-}
-
-.movie-card-title {
-    margin-bottom: 6px;
-
-    color: var(--text-primary);
-    font-size: 1.05rem;
-    font-weight: 700;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.movie-card-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-}
-
-.movie-rating {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-
-    color: var(--gold);
-    font-weight: 700;
-}
-
-.movie-rating .icon {
-    width: 16px;
-    height: 16px;
-}
-
-
-/* =========================================================
-   12. OVERLAY DO CARD
-   ========================================================= */
-
-.movie-card-overlay {
-    position: absolute;
-    inset: 0;
-
-    display: flex;
-    align-items: flex-end;
-
-    padding: 15px;
-
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.9),
-        rgba(0, 0, 0, 0.05) 65%
-    );
-
-    opacity: 0;
-
-    transition: opacity 0.3s ease;
-
-    pointer-events: none;
-}
-
-.movie-card:hover .movie-card-overlay {
-    opacity: 1;
-}
-
-.movie-card-overlay .card-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    width: 100%;
-
-    pointer-events: auto;
-}
-
-
-/* =========================================================
-   13. BADGES DE CLASSIFICAÇÃO
-   ========================================================= */
-
-.badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 30px;
-    min-height: 25px;
-    padding: 3px 8px;
-
-    border-radius: 5px;
-
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: #111;
-
-    line-height: 1;
-}
-
-.badge-livre {
-    background: var(--green);
+    color:
+        #061608;
 }
 
 .badge-12,
-.badge-14 {
-    background: var(--yellow);
+.badge-14,
+.classification-12,
+.classification-14 {
+    background:
+        var(--yellow);
+
+    color:
+        #181200;
 }
 
 .badge-16,
-.badge-18 {
-    background: var(--red);
-    color: #fff;
+.badge-18,
+.classification-16,
+.classification-18 {
+    background:
+        var(--red);
+
+    color:
+        #fff;
 }
 
 
-/* =========================================================
-   14. MODAL
-   ========================================================= */
+/* ============================================================
+   20 — MODAL
+   ============================================================ */
 
 .modal {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
+    position:
+        fixed;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    inset:
+        0;
 
-    width: 100%;
-    height: 100%;
-    padding: 25px;
+    z-index:
+        5000;
 
-    background: rgba(0, 0, 0, 0.78);
+    display:
+        flex;
 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    align-items:
+        center;
 
-    overflow-y: auto;
+    justify-content:
+        center;
 
-    opacity: 0;
-    visibility: hidden;
+    padding:
+        20px;
+
+    background:
+        rgba(0,0,0,.84);
+
+    backdrop-filter:
+        blur(9px);
+
+    -webkit-backdrop-filter:
+        blur(9px);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
 
     transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
+        opacity .3s ease,
+        visibility .3s ease;
 }
 
 .modal.active,
-.modal:target {
-    opacity: 1;
-    visibility: visible;
+.modal.show,
+.modal.open {
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
 }
 
 
-/* =========================================================
-   15. CONTEÚDO DO MODAL
-   ========================================================= */
+/* ============================================================
+   21 — MODAL CONTENT
+   ============================================================ */
 
 .modal-content {
-    position: relative;
+    position:
+        relative;
 
-    display: flex;
-    flex-direction: column;
+    width:
+        min(950px, 100%);
 
-    width: min(950px, 100%);
-    max-height: 90vh;
+    max-height:
+        92vh;
 
-    overflow: hidden;
+    overflow:
+        hidden auto;
 
-    background: #1b1b1b;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-large);
+    background:
+        linear-gradient(
+            145deg,
+            #202025,
+            #0f0f12
+        );
 
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+    border:
+        1px solid rgba(255,255,255,.1);
 
-    transform: translateY(20px) scale(0.98);
+    border-radius:
+        17px;
 
-    transition: transform 0.3s ease;
+    box-shadow:
+        0 35px 110px rgba(0,0,0,.85);
+
+    transform:
+        translateY(25px)
+        scale(.97);
+
+    transition:
+        transform .35s cubic-bezier(.2,.7,.2,1);
 }
 
 .modal.active .modal-content,
-.modal:target .modal-content {
-    transform: translateY(0) scale(1);
+.modal.show .modal-content,
+.modal.open .modal-content {
+    transform:
+        translateY(0)
+        scale(1);
 }
 
 
-/* =========================================================
-   16. CABEÇALHO DO MODAL
-   ========================================================= */
+/* ============================================================
+   22 — FECHAR
+   ============================================================ */
 
-.modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
+.modal-close,
+#closeModal {
+    position:
+        absolute;
 
-    padding: 18px 22px;
+    top:
+        14px;
 
-    border-bottom: 1px solid var(--border);
-}
+    right:
+        14px;
 
-.modal-title {
-    color: var(--text-primary);
-    font-size: 1.35rem;
-    font-weight: 800;
-}
+    z-index:
+        30;
 
-.modal-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:
+        flex;
 
-    width: 38px;
-    height: 38px;
+    align-items:
+        center;
 
-    border-radius: 50%;
+    justify-content:
+        center;
 
-    background: #292929;
-    color: var(--text-secondary);
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0,0,0,.7);
+
+    color:
+        #fff;
+
+    font-size:
+        1.4rem;
+
+    backdrop-filter:
+        blur(8px);
 
     transition:
-        background var(--transition),
-        color var(--transition),
-        transform var(--transition);
+        transform var(--speed) ease,
+        background var(--speed) ease;
 }
 
-.modal-close:hover {
-    background: var(--red);
-    color: #fff;
-    transform: rotate(90deg);
+.modal-close:hover,
+#closeModal:hover {
+    transform:
+        rotate(90deg)
+        scale(1.05);
+
+    background:
+        var(--red);
 }
 
 
-/* =========================================================
-   17. ÁREA DO TRAILER
-   ========================================================= */
+/* ============================================================
+   23 — TRAILER
+   ============================================================ */
 
 .trailer-container {
-    position: relative;
+    position:
+        relative;
 
-    width: 100%;
+    width:
+        100%;
 
-    aspect-ratio: 16 / 9;
+    aspect-ratio:
+        16 / 9;
 
-    background: #000;
+    background:
+        #000;
 }
 
 .trailer-container iframe,
-.trailer-container video {
-    position: absolute;
-    inset: 0;
+.modal iframe {
+    display:
+        block;
 
-    width: 100%;
-    height: 100%;
+    width:
+        100%;
 
-    border: 0;
+    height:
+        100%;
+
+    min-height:
+        350px;
+
+    border:
+        0;
+}
+
+.modal video {
+    width:
+        100%;
+
+    max-height:
+        500px;
+
+    background:
+        #000;
 }
 
 
-/* =========================================================
-   18. INFORMAÇÕES DO MODAL
-   ========================================================= */
+/* ============================================================
+   24 — CORPO DO MODAL
+   ============================================================ */
 
 .modal-body {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    display:
+        flex;
 
-    padding: 22px;
+    flex-direction:
+        column;
 
-    overflow-y: auto;
+    gap:
+        15px;
+
+    padding:
+        25px;
 }
+
+.modal h2,
+.modal h3 {
+    margin:
+        0;
+
+    padding:
+        0;
+
+    color:
+        #fff;
+}
+
+.modal h2::before,
+.modal h3::before {
+    display:
+        none;
+}
+
+.modal p {
+    color:
+        #c7c7cd;
+
+    line-height:
+        1.75;
+}
+
+
+/* ============================================================
+   25 — INFORMAÇÕES
+   ============================================================ */
 
 .modal-meta {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    display:
+        flex;
 
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
 }
 
-.modal-description {
-    color: #d0d0d0;
-    font-size: 0.95rem;
-    line-height: 1.75;
+.modal-meta span {
+    color:
+        var(--text-2);
+
+    font-size:
+        .88rem;
 }
+
+
+/* ============================================================
+   26 — AÇÕES
+   ============================================================ */
 
 .modal-actions {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+
+    margin-top:
+        10px;
 }
 
+.modal-actions button {
+    display:
+        inline-flex;
 
-/* =========================================================
-   19. BARRA DE PESQUISA
-   ========================================================= */
+    align-items:
+        center;
 
-.search {
-    display: flex;
-    align-items: center;
+    justify-content:
+        center;
 
-    width: min(350px, 100%);
-}
+    gap:
+        7px;
 
-.search input {
-    width: 100%;
-    height: 42px;
+    min-height:
+        43px;
 
-    padding: 0 14px;
+    padding:
+        9px 16px;
 
-    border: 1px solid var(--border);
-    border-radius: var(--radius-small);
+    background:
+        #25252b;
 
-    outline: none;
+    border:
+        1px solid var(--border);
 
-    background: #1f1f1f;
-    color: var(--text-primary);
+    border-radius:
+        var(--radius-sm);
+
+    color:
+        #fff;
+
+    font-weight:
+        750;
 
     transition:
-        border-color var(--transition),
-        box-shadow var(--transition);
+        all var(--speed) ease;
 }
 
-.search input::placeholder {
-    color: var(--text-muted);
-}
+.modal-actions button:hover {
+    transform:
+        translateY(-2px);
 
-.search input:focus {
-    border-color: var(--red);
-    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.12);
-}
+    background:
+        #303038;
 
+    border-color:
+        rgba(255,255,255,.17);
 
-/* =========================================================
-   20. SEÇÕES
-   ========================================================= */
-
-.section {
-    width: min(1200px, 90%);
-    margin: 55px auto;
-}
-
-.section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-
-    margin-bottom: 22px;
-}
-
-.section-title {
-    position: relative;
-
-    color: var(--text-primary);
-    font-size: 1.7rem;
-    font-weight: 800;
-}
-
-.section-title::before {
-    content: "";
-
-    display: inline-block;
-
-    width: 5px;
-    height: 24px;
-
-    margin-right: 10px;
-
-    border-radius: 5px;
-
-    background: var(--red);
-
-    vertical-align: -2px;
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.3);
 }
 
 
-/* =========================================================
-   21. ESTADOS DE FOCO E ACESSIBILIDADE
-   ========================================================= */
+/* ============================================================
+   27 — LIKE
+   ============================================================ */
+
+#likeBtn.active,
+.like-btn.active,
+button.like.active {
+    color:
+        var(--green);
+
+    background:
+        rgba(53,214,90,.12);
+
+    border-color:
+        rgba(53,214,90,.4);
+}
+
+#likeBtn:hover,
+.like-btn:hover,
+button.like:hover {
+    color:
+        var(--green);
+}
+
+
+/* ============================================================
+   28 — DISLIKE
+   ============================================================ */
+
+#dislikeBtn.active,
+.dislike-btn.active,
+button.dislike.active {
+    color:
+        var(--red);
+
+    background:
+        rgba(229,9,20,.12);
+
+    border-color:
+        rgba(229,9,20,.4);
+}
+
+
+/* ============================================================
+   29 — VISTO
+   ============================================================ */
+
+#watchedBtn.active,
+.watched-btn.active,
+button.watched.active {
+    color:
+        var(--green);
+
+    background:
+        rgba(53,214,90,.12);
+
+    border-color:
+        rgba(53,214,90,.4);
+}
+
+
+/* ============================================================
+   30 — ÍCONES SVG
+   ============================================================ */
+
+svg {
+    width:
+        20px;
+
+    height:
+        20px;
+
+    fill:
+        currentColor;
+
+    transition:
+        transform var(--speed) ease,
+        fill var(--speed) ease;
+}
+
+button:hover svg {
+    transform:
+        scale(1.1);
+}
+
+button.active svg {
+    fill:
+        currentColor;
+}
+
+
+/* ============================================================
+   31 — ESTADO VAZIO
+   ============================================================ */
+
+.empty-message,
+#favoritesGrid:empty {
+    color:
+        var(--muted);
+
+    text-align:
+        center;
+}
+
+.empty-message {
+    padding:
+        35px 20px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px dashed rgba(255,255,255,.1);
+
+    border-radius:
+        var(--radius);
+}
+
+
+/* ============================================================
+   32 — ANIMAÇÃO DOS CARDS
+   ============================================================ */
+
+.movie-card {
+    animation:
+        cardIn .45s ease both;
+}
+
+@keyframes cardIn {
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ============================================================
+   33 — FOCUS
+   ============================================================ */
 
 button:focus-visible,
-a:focus-visible,
-input:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 3px;
+input:focus-visible,
+select:focus-visible {
+    outline:
+        2px solid var(--gold);
+
+    outline-offset:
+        3px;
 }
 
 
-/* =========================================================
-   22. SCROLLBAR
-   ========================================================= */
+/* ============================================================
+   34 — FOOTER
+   ============================================================ */
 
-::-webkit-scrollbar {
-    width: 9px;
+footer {
+    padding:
+        35px 20px;
+
+    background:
+        #060607;
+
+    border-top:
+        1px solid var(--border);
+
+    color:
+        var(--muted);
+
+    text-align:
+        center;
+
+    font-size:
+        .85rem;
 }
 
-::-webkit-scrollbar-track {
-    background: #101010;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #3a3a3a;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--red);
+footer strong {
+    color:
+        var(--text-2);
 }
 
 
-/* =========================================================
-   23. RESPONSIVIDADE — TABLETS
-   ========================================================= */
+/* ============================================================
+   35 — TABLET
+   ============================================================ */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-    .header {
-        flex-wrap: wrap;
-        padding: 12px 4%;
+    #moviesGrid,
+    #favoritesGrid {
+        grid-template-columns:
+            repeat(
+                auto-fill,
+                minmax(160px, 1fr)
+            );
+
+        gap:
+            17px;
     }
 
-    .nav {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        gap: 18px;
-    }
-
-    .search {
-        width: 260px;
-    }
-
-    .movies-grid {
-        grid-template-columns: repeat(
-            auto-fill,
-            minmax(160px, 1fr)
-        );
-
-        gap: 18px;
-    }
-
-    .section {
-        margin: 40px auto;
+    main {
+        width:
+            94%;
     }
 
     .modal {
-        padding: 15px;
+        padding:
+            15px;
     }
 
     .modal-content {
-        max-height: 94vh;
+        max-height:
+            94vh;
     }
 }
 
 
-/* =========================================================
-   24. RESPONSIVIDADE — CELULARES
-   ========================================================= */
+/* ============================================================
+   36 — CELULAR
+   ============================================================ */
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
 
-    .header {
-        min-height: auto;
-        gap: 12px;
+    h1 {
+        width:
+            94%;
+
+        padding:
+            20px 0 13px;
+
+        font-size:
+            1.7rem;
     }
 
-    .logo {
-        font-size: 1.2rem;
+    #searchInput {
+        width:
+            94%;
+
+        height:
+            46px;
     }
 
-    .logo svg {
-        width: 27px;
-        height: 27px;
+    #genreFilters {
+        width:
+            94%;
+
+        padding-bottom:
+            18px;
     }
 
-    .search {
-        order: 2;
-        width: 100%;
+    main {
+        width:
+            94%;
+
+        padding-top:
+            10px;
     }
 
-    .nav {
-        order: 3;
+    h2 {
+        margin-top:
+            28px;
 
-        justify-content: flex-start;
-
-        overflow-x: auto;
-        padding-bottom: 4px;
-
-        scrollbar-width: none;
+        font-size:
+            1.3rem;
     }
 
-    .nav::-webkit-scrollbar {
-        display: none;
+    h2::before {
+        height:
+            22px;
+
+        width:
+            4px;
     }
 
-    .nav a {
-        flex-shrink: 0;
-        font-size: 0.85rem;
-    }
+    #moviesGrid,
+    #favoritesGrid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-    .movies-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-
-        width: 94%;
-        margin: 28px auto;
+        gap:
+            12px;
     }
 
     .movie-card-content {
-        padding: 11px;
+        padding:
+            10px;
     }
 
-    .movie-card-title {
-        font-size: 0.9rem;
+    .movie-card h3 {
+        font-size:
+            .86rem;
     }
 
-    .movie-card-info {
-        font-size: 0.75rem;
+    .movie-card p {
+        font-size:
+            .72rem;
     }
 
-    .movie-card-overlay {
-        opacity: 1;
-    }
+    .favorite-btn {
+        width:
+            35px;
 
-    .section {
-        width: 94%;
-        margin: 35px auto;
-    }
+        height:
+            35px;
 
-    .section-title {
-        font-size: 1.35rem;
-    }
+        top:
+            8px;
 
-    .section-title::before {
-        height: 19px;
-        width: 4px;
+        right:
+            8px;
     }
 
     .modal {
-        align-items: flex-start;
-        padding: 10px;
+        padding:
+            7px;
     }
 
     .modal-content {
-        margin: auto 0;
-        border-radius: 12px;
-    }
+        max-height:
+            96vh;
 
-    .modal-header {
-        padding: 14px 16px;
-    }
-
-    .modal-title {
-        font-size: 1.05rem;
+        border-radius:
+            12px;
     }
 
     .modal-body {
-        padding: 16px;
-        gap: 14px;
+        padding:
+            17px;
     }
 
-    .modal-description {
-        font-size: 0.88rem;
+    .modal iframe {
+        min-height:
+            210px;
     }
 
     .modal-actions {
-        flex-direction: column;
-        align-items: stretch;
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            8px;
     }
 
-    .modal-actions .btn,
-    .modal-actions .like-btn {
-        width: 100%;
+    .modal-actions button {
+        width:
+            100%;
+
+        padding:
+            9px 7px;
+
+        font-size:
+            .8rem;
     }
 }
 
 
-/* =========================================================
-   25. REDUÇÃO DE MOVIMENTO
-   ========================================================= */
+/* ============================================================
+   37 — CELULAR PEQUENO
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+    #moviesGrid,
+    #favoritesGrid {
+        gap:
+            9px;
+    }
+
+    .movie-card-content {
+        padding:
+            8px;
+    }
+
+    .movie-card h3 {
+        font-size:
+            .79rem;
+    }
+
+    .modal-actions {
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+/* ============================================================
+   38 — REDUÇÃO DE MOVIMENTO
+   ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
+        scroll-behavior:
+            auto !important;
 
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+        animation-duration:
+            .01ms !important;
 
-        transition-duration: 0.01ms !important;
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
     }
 }
-```
