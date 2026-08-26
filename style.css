@@ -1,49 +1,52 @@
 /* ============================================================
-   🍿 POPCORN HUB — STYLE.CSS
-   CSS3 PURO | CINEMA / STREAMING
+   🍿 POPCORN HUB
+   STYLE.CSS — CSS3 PURO
+   Visual completo — Cinema / Streaming
    ============================================================ */
 
 
 /* ============================================================
-   01 — VARIÁVEIS
+   01 — VARIÁVEIS DO TEMA
    ============================================================ */
 
 :root {
-    --bg: #08080a;
-    --bg-2: #0e0e11;
-    --bg-3: #151519;
+    --bg: #070709;
+    --bg-2: #0d0d10;
+    --bg-3: #141419;
 
     --card: #18181d;
-    --card-hover: #222229;
+    --card-2: #202027;
+    --card-hover: #25252d;
 
     --white: #ffffff;
     --text: #eeeeee;
-    --text-2: #b6b6bd;
-    --muted: #777780;
+    --text-light: #d0d0d5;
+    --text-muted: #85858d;
 
     --red: #e50914;
     --red-light: #ff303a;
-    --red-dark: #a5070f;
+    --red-dark: #a70710;
 
     --gold: #f5c518;
-    --gold-light: #ffdc5a;
+    --gold-light: #ffdc5c;
 
     --green: #35d65a;
     --yellow: #f5c518;
 
-    --border: rgba(255, 255, 255, .08);
-    --border-hover: rgba(229, 9, 20, .45);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.14);
+    --border-red: rgba(229, 9, 20, 0.45);
 
     --shadow:
-        0 12px 35px rgba(0, 0, 0, .45);
+        0 12px 35px rgba(0, 0, 0, 0.45);
 
     --shadow-hover:
-        0 25px 65px rgba(0, 0, 0, .75);
+        0 25px 65px rgba(0, 0, 0, 0.75);
 
     --radius: 14px;
-    --radius-sm: 8px;
+    --radius-small: 8px;
 
-    --speed: .25s;
+    --transition: 0.25s ease;
 }
 
 
@@ -64,29 +67,28 @@ html {
 body {
     min-height: 100vh;
 
+    overflow-x: hidden;
+
     background:
         radial-gradient(
-            circle at 50% -10%,
-            rgba(229, 9, 20, .15),
+            circle at 50% -15%,
+            rgba(229, 9, 20, 0.16),
             transparent 35%
         ),
         linear-gradient(
             180deg,
             #09090b 0%,
-            #08080a 100%
+            #070709 100%
         );
 
     color: var(--text);
 
     font-family:
-        Inter,
         Arial,
         Helvetica,
         sans-serif;
 
     line-height: 1.6;
-
-    overflow-x: hidden;
 }
 
 button,
@@ -97,7 +99,6 @@ textarea {
 }
 
 button {
-    border: 0;
     cursor: pointer;
 }
 
@@ -113,12 +114,12 @@ a {
 
 
 /* ============================================================
-   03 — SELEÇÃO
+   03 — SELEÇÃO DE TEXTO
    ============================================================ */
 
 ::selection {
     background: var(--red);
-    color: #fff;
+    color: #ffffff;
 }
 
 
@@ -131,12 +132,12 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-    background: #060607;
+    background: #050506;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #36363d;
-    border-radius: 20px;
+    background: #35353b;
+    border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -145,35 +146,43 @@ a {
 
 
 /* ============================================================
-   05 — CABEÇALHO
+   05 — HEADER
    ============================================================ */
 
 header {
     position: sticky;
     top: 0;
-    z-index: 999;
+
+    z-index: 1000;
 
     width: 100%;
 
     background:
-        rgba(8, 8, 10, .88);
+        rgba(7, 7, 9, 0.90);
 
     border-bottom:
         1px solid var(--border);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
     box-shadow:
-        0 5px 30px rgba(0, 0, 0, .35);
+        0 8px 30px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
 
     transition:
-        background var(--speed) ease;
+        background var(--transition),
+        box-shadow var(--transition);
 }
 
 header:hover {
     background:
-        rgba(8, 8, 10, .95);
+        rgba(7, 7, 9, 0.96);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45);
 }
 
 
@@ -199,7 +208,7 @@ h1 {
     letter-spacing: -1.5px;
 
     text-shadow:
-        0 5px 25px rgba(0, 0, 0, .4);
+        0 5px 25px rgba(0, 0, 0, 0.45);
 }
 
 h1::first-letter {
@@ -208,7 +217,7 @@ h1::first-letter {
 
 
 /* ============================================================
-   07 — PESQUISA
+   07 — CAMPO DE PESQUISA
    ============================================================ */
 
 #searchInput {
@@ -224,52 +233,54 @@ h1::first-letter {
     padding:
         0 18px;
 
+    outline: none;
+
     background:
-        rgba(255, 255, 255, .055);
+        rgba(255, 255, 255, 0.055);
 
     border:
         1px solid var(--border);
 
     border-radius:
-        var(--radius-sm);
+        var(--radius-small);
 
-    color: var(--white);
-
-    outline: none;
+    color:
+        var(--white);
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.03);
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
 
     transition:
-        background var(--speed) ease,
-        border-color var(--speed) ease,
-        box-shadow var(--speed) ease,
-        transform var(--speed) ease;
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
 }
 
 #searchInput::placeholder {
-    color: var(--muted);
+    color: var(--text-muted);
 }
 
 #searchInput:hover {
     background:
-        rgba(255,255,255,.075);
+        rgba(255, 255, 255, 0.08);
 }
 
 #searchInput:focus {
-    border-color: var(--red);
+    border-color:
+        var(--red);
 
     background:
-        rgba(255,255,255,.08);
+        rgba(255, 255, 255, 0.08);
 
     box-shadow:
-        0 0 0 3px rgba(229,9,20,.13),
-        0 12px 30px rgba(0,0,0,.25);
+        0 0 0 3px rgba(229, 9, 20, 0.13),
+        0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 
 /* ============================================================
-   08 — FILTROS
+   08 — FILTROS DE GÊNERO
    ============================================================ */
 
 #genreFilters {
@@ -309,19 +320,23 @@ h1::first-letter {
         999px;
 
     background:
-        rgba(255,255,255,.055);
+        rgba(255, 255, 255, 0.055);
 
     color:
-        var(--text-2);
+        var(--text-light);
 
     font-size:
-        .88rem;
+        0.88rem;
 
     font-weight:
         700;
 
     transition:
-        all var(--speed) ease;
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 #genreFilters button:hover {
@@ -329,13 +344,16 @@ h1::first-letter {
         translateY(-2px);
 
     background:
-        rgba(255,255,255,.10);
+        rgba(255, 255, 255, 0.10);
 
     color:
         var(--white);
 
     border-color:
-        rgba(229,9,20,.4);
+        var(--border-red);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 #genreFilters button.active,
@@ -347,14 +365,14 @@ h1::first-letter {
             var(--red-dark)
         );
 
+    color:
+        #ffffff;
+
     border-color:
         var(--red);
 
-    color:
-        #fff;
-
     box-shadow:
-        0 7px 22px rgba(229,9,20,.25);
+        0 7px 24px rgba(229, 9, 20, 0.28);
 }
 
 
@@ -363,12 +381,14 @@ h1::first-letter {
    ============================================================ */
 
 main {
-    width: min(1250px, 92%);
+    width:
+        min(1250px, 92%);
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
     padding:
-        18px 0 80px;
+        20px 0 80px;
 }
 
 
@@ -377,7 +397,8 @@ main {
    ============================================================ */
 
 h2 {
-    position: relative;
+    position:
+        relative;
 
     margin:
         38px 0 22px;
@@ -395,19 +416,26 @@ h2 {
         900;
 
     letter-spacing:
-        -.5px;
+        -0.5px;
 }
 
 h2::before {
     content: "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 0;
-    top: 50%;
+    left:
+        0;
 
-    width: 5px;
-    height: 28px;
+    top:
+        50%;
+
+    width:
+        5px;
+
+    height:
+        28px;
 
     transform:
         translateY(-50%);
@@ -420,20 +448,21 @@ h2::before {
         );
 
     border-radius:
-        99px;
+        50px;
 
     box-shadow:
-        0 0 18px rgba(229,9,20,.4);
+        0 0 18px rgba(229, 9, 20, 0.45);
 }
 
 
 /* ============================================================
-   11 — GRID
+   11 — GRID DE FILMES
    ============================================================ */
 
 #moviesGrid,
 #favoritesGrid {
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(
@@ -441,22 +470,27 @@ h2::before {
             minmax(190px, 1fr)
         );
 
-    gap: 24px;
+    gap:
+        24px;
 
-    width: 100%;
+    width:
+        100%;
 }
 
 
 /* ============================================================
-   12 — CARD
+   12 — CARD DO FILME
    ============================================================ */
 
 .movie-card {
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    min-width: 0;
+    min-width:
+        0;
 
     background:
         linear-gradient(
@@ -474,16 +508,17 @@ h2::before {
     box-shadow:
         var(--shadow);
 
-    isolation: isolate;
+    isolation:
+        isolate;
 
     transform:
         translateZ(0);
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease,
-        background .35s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
 }
 
 .movie-card:hover {
@@ -495,20 +530,21 @@ h2::before {
         var(--card-hover);
 
     border-color:
-        var(--border-hover);
+        var(--border-red);
 
     box-shadow:
         var(--shadow-hover),
-        0 0 35px rgba(229,9,20,.08);
+        0 0 35px rgba(229, 9, 20, 0.08);
 }
 
 
 /* ============================================================
-   13 — POSTER
+   13 — FOTOS / POSTERS DOS FILMES
    ============================================================ */
 
 .movie-card img {
-    width: 100%;
+    width:
+        100%;
 
     aspect-ratio:
         2 / 3;
@@ -516,12 +552,15 @@ h2::before {
     object-fit:
         cover;
 
+    object-position:
+        center;
+
     background:
         #050505;
 
     transition:
-        transform .6s cubic-bezier(.2,.7,.2,1),
-        filter .45s ease;
+        transform 0.6s cubic-bezier(.2, .7, .2, 1),
+        filter 0.45s ease;
 }
 
 .movie-card:hover img {
@@ -529,62 +568,77 @@ h2::before {
         scale(1.08);
 
     filter:
-        brightness(.72)
-        saturate(1.15);
+        brightness(0.70)
+        saturate(1.15)
+        contrast(1.03);
 }
 
 
 /* ============================================================
-   14 — OVERLAY CINEMATOGRÁFICO
+   14 — GRADIENTE SOBRE O POSTER
    ============================================================ */
 
 .movie-card::before {
     content: "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    z-index: 2;
+    z-index:
+        2;
 
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left:
+        0;
 
-    height: 55%;
+    right:
+        0;
 
-    pointer-events: none;
+    bottom:
+        0;
+
+    height:
+        60%;
+
+    pointer-events:
+        none;
 
     background:
         linear-gradient(
             to top,
-            rgba(0,0,0,.95),
-            rgba(0,0,0,.55),
+            rgba(0, 0, 0, 0.97),
+            rgba(0, 0, 0, 0.58),
             transparent
         );
 
-    opacity: .8;
+    opacity:
+        0.9;
 }
 
 
 /* ============================================================
-   15 — BRILHO
+   15 — EFEITO DE BRILHO
    ============================================================ */
 
 .movie-card::after {
     content: "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    z-index: 4;
+    z-index:
+        6;
 
-    inset: 0;
+    inset:
+        0;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
     background:
         linear-gradient(
             115deg,
             transparent 25%,
-            rgba(255,255,255,.08) 48%,
+            rgba(255, 255, 255, 0.08) 48%,
             transparent 65%
         );
 
@@ -592,7 +646,7 @@ h2::before {
         translateX(-130%);
 
     transition:
-        transform .75s ease;
+        transform 0.75s ease;
 }
 
 .movie-card:hover::after {
@@ -602,13 +656,15 @@ h2::before {
 
 
 /* ============================================================
-   16 — CONTEÚDO
+   16 — CONTEÚDO DOS CARDS
    ============================================================ */
 
 .movie-card-content {
-    position: relative;
+    position:
+        relative;
 
-    z-index: 5;
+    z-index:
+        8;
 
     padding:
         15px;
@@ -639,15 +695,15 @@ h2::before {
 
 .movie-card p {
     color:
-        var(--text-2);
+        var(--text-light);
 
     font-size:
-        .83rem;
+        0.83rem;
 }
 
 
 /* ============================================================
-   17 — NOTA
+   17 — RATING / NOTA
    ============================================================ */
 
 .rating {
@@ -684,12 +740,17 @@ h2::before {
    ============================================================ */
 
 .favorite-btn {
-    position: absolute;
+    position:
+        absolute;
 
-    top: 12px;
-    right: 12px;
+    top:
+        12px;
 
-    z-index: 10;
+    right:
+        12px;
+
+    z-index:
+        15;
 
     display:
         flex;
@@ -707,25 +768,25 @@ h2::before {
         41px;
 
     border:
-        1px solid rgba(255,255,255,.14);
+        1px solid rgba(255, 255, 255, 0.15);
 
     border-radius:
         50%;
 
     background:
-        rgba(0,0,0,.65);
+        rgba(0, 0, 0, 0.68);
 
     color:
-        #fff;
+        #ffffff;
 
     backdrop-filter:
         blur(8px);
 
     transition:
-        transform var(--speed) ease,
-        background var(--speed) ease,
-        color var(--speed) ease,
-        border-color var(--speed) ease;
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
 }
 
 .favorite-btn:hover {
@@ -733,13 +794,13 @@ h2::before {
         scale(1.12);
 
     background:
-        rgba(229,9,20,.18);
+        rgba(229, 9, 20, 0.18);
 
     color:
         var(--red-light);
 
     border-color:
-        rgba(229,9,20,.5);
+        rgba(229, 9, 20, 0.5);
 }
 
 .favorite-btn.active {
@@ -747,13 +808,13 @@ h2::before {
         var(--red);
 
     background:
-        rgba(229,9,20,.18);
+        rgba(229, 9, 20, 0.18);
 
     border-color:
-        rgba(229,9,20,.4);
+        rgba(229, 9, 20, 0.45);
 
     animation:
-        heartPop .35s ease;
+        heartPop 0.35s ease;
 }
 
 .favorite-btn.active svg {
@@ -762,22 +823,26 @@ h2::before {
 }
 
 @keyframes heartPop {
+
     0% {
-        transform: scale(.7);
+        transform:
+            scale(0.7);
     }
 
-    55% {
-        transform: scale(1.3);
+    60% {
+        transform:
+            scale(1.3);
     }
 
     100% {
-        transform: scale(1);
+        transform:
+            scale(1);
     }
 }
 
 
 /* ============================================================
-   19 — CLASSIFICAÇÃO
+   19 — CLASSIFICAÇÃO INDICATIVA
    ============================================================ */
 
 .badge,
@@ -804,7 +869,7 @@ h2::before {
         5px;
 
     font-size:
-        .73rem;
+        0.73rem;
 
     font-weight:
         900;
@@ -812,6 +877,9 @@ h2::before {
     line-height:
         1;
 }
+
+
+/* LIVRE */
 
 .badge-livre,
 .classification-livre {
@@ -821,6 +889,9 @@ h2::before {
     color:
         #061608;
 }
+
+
+/* 12 / 14 */
 
 .badge-12,
 .badge-14,
@@ -833,6 +904,9 @@ h2::before {
         #181200;
 }
 
+
+/* 16 / 18 */
+
 .badge-16,
 .badge-18,
 .classification-16,
@@ -841,7 +915,7 @@ h2::before {
         var(--red);
 
     color:
-        #fff;
+        #ffffff;
 }
 
 
@@ -872,7 +946,7 @@ h2::before {
         20px;
 
     background:
-        rgba(0,0,0,.84);
+        rgba(0, 0, 0, 0.84);
 
     backdrop-filter:
         blur(9px);
@@ -890,8 +964,8 @@ h2::before {
         none;
 
     transition:
-        opacity .3s ease,
-        visibility .3s ease;
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 }
 
 .modal.active,
@@ -909,7 +983,7 @@ h2::before {
 
 
 /* ============================================================
-   21 — MODAL CONTENT
+   21 — CONTEÚDO DO MODAL
    ============================================================ */
 
 .modal-content {
@@ -933,20 +1007,20 @@ h2::before {
         );
 
     border:
-        1px solid rgba(255,255,255,.1);
+        1px solid rgba(255, 255, 255, 0.11);
 
     border-radius:
         17px;
 
     box-shadow:
-        0 35px 110px rgba(0,0,0,.85);
+        0 35px 110px rgba(0, 0, 0, 0.85);
 
     transform:
         translateY(25px)
-        scale(.97);
+        scale(0.97);
 
     transition:
-        transform .35s cubic-bezier(.2,.7,.2,1);
+        transform 0.35s cubic-bezier(.2, .7, .2, 1);
 }
 
 .modal.active .modal-content,
@@ -959,7 +1033,7 @@ h2::before {
 
 
 /* ============================================================
-   22 — FECHAR
+   22 — BOTÃO FECHAR
    ============================================================ */
 
 .modal-close,
@@ -992,16 +1066,16 @@ h2::before {
         42px;
 
     border:
-        1px solid rgba(255,255,255,.15);
+        1px solid rgba(255, 255, 255, 0.15);
 
     border-radius:
         50%;
 
     background:
-        rgba(0,0,0,.7);
+        rgba(0, 0, 0, 0.72);
 
     color:
-        #fff;
+        #ffffff;
 
     font-size:
         1.4rem;
@@ -1010,8 +1084,8 @@ h2::before {
         blur(8px);
 
     transition:
-        transform var(--speed) ease,
-        background var(--speed) ease;
+        transform var(--transition),
+        background var(--transition);
 }
 
 .modal-close:hover,
@@ -1062,6 +1136,9 @@ h2::before {
 }
 
 .modal video {
+    display:
+        block;
+
     width:
         100%;
 
@@ -1100,7 +1177,7 @@ h2::before {
         0;
 
     color:
-        #fff;
+        var(--white);
 }
 
 .modal h2::before,
@@ -1119,7 +1196,7 @@ h2::before {
 
 
 /* ============================================================
-   25 — INFORMAÇÕES
+   25 — META DO FILME
    ============================================================ */
 
 .modal-meta {
@@ -1138,15 +1215,15 @@ h2::before {
 
 .modal-meta span {
     color:
-        var(--text-2);
+        var(--text-light);
 
     font-size:
-        .88rem;
+        0.88rem;
 }
 
 
 /* ============================================================
-   26 — AÇÕES
+   26 — BOTÕES DO MODAL
    ============================================================ */
 
 .modal-actions {
@@ -1189,16 +1266,20 @@ h2::before {
         1px solid var(--border);
 
     border-radius:
-        var(--radius-sm);
+        var(--radius-small);
 
     color:
-        #fff;
+        #ffffff;
 
     font-weight:
         750;
 
     transition:
-        all var(--speed) ease;
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 .modal-actions button:hover {
@@ -1209,10 +1290,10 @@ h2::before {
         #303038;
 
     border-color:
-        rgba(255,255,255,.17);
+        var(--border-light);
 
     box-shadow:
-        0 8px 22px rgba(0,0,0,.3);
+        0 8px 22px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -1227,10 +1308,10 @@ button.like.active {
         var(--green);
 
     background:
-        rgba(53,214,90,.12);
+        rgba(53, 214, 90, 0.12);
 
     border-color:
-        rgba(53,214,90,.4);
+        rgba(53, 214, 90, 0.4);
 }
 
 #likeBtn:hover,
@@ -1252,10 +1333,10 @@ button.dislike.active {
         var(--red);
 
     background:
-        rgba(229,9,20,.12);
+        rgba(229, 9, 20, 0.12);
 
     border-color:
-        rgba(229,9,20,.4);
+        rgba(229, 9, 20, 0.4);
 }
 
 
@@ -1270,15 +1351,15 @@ button.watched.active {
         var(--green);
 
     background:
-        rgba(53,214,90,.12);
+        rgba(53, 214, 90, 0.12);
 
     border-color:
-        rgba(53,214,90,.4);
+        rgba(53, 214, 90, 0.4);
 }
 
 
 /* ============================================================
-   30 — ÍCONES SVG
+   30 — SVG
    ============================================================ */
 
 svg {
@@ -1292,8 +1373,9 @@ svg {
         currentColor;
 
     transition:
-        transform var(--speed) ease,
-        fill var(--speed) ease;
+        transform var(--transition),
+        fill var(--transition),
+        color var(--transition);
 }
 
 button:hover svg {
@@ -1311,40 +1393,87 @@ button.active svg {
    31 — ESTADO VAZIO
    ============================================================ */
 
-.empty-message,
-#favoritesGrid:empty {
-    color:
-        var(--muted);
-
-    text-align:
-        center;
-}
-
 .empty-message {
     padding:
         35px 20px;
 
     background:
-        rgba(255,255,255,.025);
+        rgba(255, 255, 255, 0.025);
 
     border:
-        1px dashed rgba(255,255,255,.1);
+        1px dashed rgba(255, 255, 255, 0.11);
 
     border-radius:
         var(--radius);
+
+    color:
+        var(--text-muted);
+
+    text-align:
+        center;
 }
 
 
 /* ============================================================
-   32 — ANIMAÇÃO DOS CARDS
+   32 — FOOTER
+   ============================================================ */
+
+footer {
+    width:
+        100%;
+
+    padding:
+        35px 20px;
+
+    background:
+        #050506;
+
+    border-top:
+        1px solid var(--border);
+
+    color:
+        var(--text-muted);
+
+    text-align:
+        center;
+
+    font-size:
+        0.85rem;
+}
+
+footer strong {
+    color:
+        var(--text-light);
+}
+
+
+/* ============================================================
+   33 — FOCUS / ACESSIBILIDADE
+   ============================================================ */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+    outline:
+        2px solid var(--gold);
+
+    outline-offset:
+        3px;
+}
+
+
+/* ============================================================
+   34 — ENTRADA DOS CARDS
    ============================================================ */
 
 .movie-card {
     animation:
-        cardIn .45s ease both;
+        cardAppear 0.45s ease both;
 }
 
-@keyframes cardIn {
+@keyframes cardAppear {
+
     from {
         opacity:
             0;
@@ -1360,51 +1489,6 @@ button.active svg {
         transform:
             translateY(0);
     }
-}
-
-
-/* ============================================================
-   33 — FOCUS
-   ============================================================ */
-
-button:focus-visible,
-input:focus-visible,
-select:focus-visible {
-    outline:
-        2px solid var(--gold);
-
-    outline-offset:
-        3px;
-}
-
-
-/* ============================================================
-   34 — FOOTER
-   ============================================================ */
-
-footer {
-    padding:
-        35px 20px;
-
-    background:
-        #060607;
-
-    border-top:
-        1px solid var(--border);
-
-    color:
-        var(--muted);
-
-    text-align:
-        center;
-
-    font-size:
-        .85rem;
-}
-
-footer strong {
-    color:
-        var(--text-2);
 }
 
 
@@ -1493,11 +1577,11 @@ footer strong {
     }
 
     h2::before {
-        height:
-            22px;
-
         width:
             4px;
+
+        height:
+            22px;
     }
 
     #moviesGrid,
@@ -1516,12 +1600,12 @@ footer strong {
 
     .movie-card h3 {
         font-size:
-            .86rem;
+            0.86rem;
     }
 
     .movie-card p {
         font-size:
-            .72rem;
+            0.72rem;
     }
 
     .favorite-btn {
@@ -1580,7 +1664,7 @@ footer strong {
             9px 7px;
 
         font-size:
-            .8rem;
+            0.8rem;
     }
 }
 
@@ -1604,7 +1688,7 @@ footer strong {
 
     .movie-card h3 {
         font-size:
-            .79rem;
+            0.79rem;
     }
 
     .modal-actions {
@@ -1627,12 +1711,1733 @@ footer strong {
             auto !important;
 
         animation-duration:
-            .01ms !important;
+            0.01ms !important;
 
         animation-iteration-count:
             1 !important;
 
         transition-duration:
-            .01ms !important;
+            0.01ms !important;
+    }
+}/* ============================================================
+   🍿 POPCORN HUB
+   STYLE.CSS — CSS3 PURO
+   Visual completo — Cinema / Streaming
+   ============================================================ */
+
+
+/* ============================================================
+   01 — VARIÁVEIS DO TEMA
+   ============================================================ */
+
+:root {
+    --bg: #070709;
+    --bg-2: #0d0d10;
+    --bg-3: #141419;
+
+    --card: #18181d;
+    --card-2: #202027;
+    --card-hover: #25252d;
+
+    --white: #ffffff;
+    --text: #eeeeee;
+    --text-light: #d0d0d5;
+    --text-muted: #85858d;
+
+    --red: #e50914;
+    --red-light: #ff303a;
+    --red-dark: #a70710;
+
+    --gold: #f5c518;
+    --gold-light: #ffdc5c;
+
+    --green: #35d65a;
+    --yellow: #f5c518;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.14);
+    --border-red: rgba(229, 9, 20, 0.45);
+
+    --shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45);
+
+    --shadow-hover:
+        0 25px 65px rgba(0, 0, 0, 0.75);
+
+    --radius: 14px;
+    --radius-small: 8px;
+
+    --transition: 0.25s ease;
+}
+
+
+/* ============================================================
+   02 — RESET
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% -15%,
+            rgba(229, 9, 20, 0.16),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #09090b 0%,
+            #070709 100%
+        );
+
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ============================================================
+   03 — SELEÇÃO DE TEXTO
+   ============================================================ */
+
+::selection {
+    background: var(--red);
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   04 — SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050506;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #35353b;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--red);
+}
+
+
+/* ============================================================
+   05 — HEADER
+   ============================================================ */
+
+header {
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    background:
+        rgba(7, 7, 9, 0.90);
+
+    border-bottom:
+        1px solid var(--border);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    transition:
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+header:hover {
+    background:
+        rgba(7, 7, 9, 0.96);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ============================================================
+   06 — TÍTULO / LOGO
+   ============================================================ */
+
+h1 {
+    width: min(1250px, 92%);
+
+    margin: 0 auto;
+
+    padding:
+        25px 0 14px;
+
+    color: var(--white);
+
+    font-size:
+        clamp(1.8rem, 4vw, 2.7rem);
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.45);
+}
+
+h1::first-letter {
+    color: var(--red);
+}
+
+
+/* ============================================================
+   07 — CAMPO DE PESQUISA
+   ============================================================ */
+
+#searchInput {
+    display: block;
+
+    width: min(650px, 92%);
+
+    height: 50px;
+
+    margin:
+        0 auto 18px;
+
+    padding:
+        0 18px;
+
+    outline: none;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-small);
+
+    color:
+        var(--white);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+#searchInput::placeholder {
+    color: var(--text-muted);
+}
+
+#searchInput:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+#searchInput:focus {
+    border-color:
+        var(--red);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 0 0 3px rgba(229, 9, 20, 0.13),
+        0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ============================================================
+   08 — FILTROS DE GÊNERO
+   ============================================================ */
+
+#genreFilters {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    width: min(1250px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        0 0 24px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+#genreFilters::-webkit-scrollbar {
+    display: none;
+}
+
+#genreFilters button {
+    flex: 0 0 auto;
+
+    padding:
+        9px 17px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    color:
+        var(--text-light);
+
+    font-size:
+        0.88rem;
+
+    font-weight:
+        700;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+#genreFilters button:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    color:
+        var(--white);
+
+    border-color:
+        var(--border-red);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+#genreFilters button.active,
+#genreFilters button.selected {
+    background:
+        linear-gradient(
+            135deg,
+            var(--red),
+            var(--red-dark)
+        );
+
+    color:
+        #ffffff;
+
+    border-color:
+        var(--red);
+
+    box-shadow:
+        0 7px 24px rgba(229, 9, 20, 0.28);
+}
+
+
+/* ============================================================
+   09 — CONTEÚDO PRINCIPAL
+   ============================================================ */
+
+main {
+    width:
+        min(1250px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        20px 0 80px;
+}
+
+
+/* ============================================================
+   10 — TÍTULOS DAS SEÇÕES
+   ============================================================ */
+
+h2 {
+    position:
+        relative;
+
+    margin:
+        38px 0 22px;
+
+    padding-left:
+        16px;
+
+    color:
+        var(--white);
+
+    font-size:
+        clamp(1.35rem, 3vw, 1.9rem);
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -0.5px;
+}
+
+h2::before {
+    content: "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        5px;
+
+    height:
+        28px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--red-light),
+            var(--red-dark)
+        );
+
+    border-radius:
+        50px;
+
+    box-shadow:
+        0 0 18px rgba(229, 9, 20, 0.45);
+}
+
+
+/* ============================================================
+   11 — GRID DE FILMES
+   ============================================================ */
+
+#moviesGrid,
+#favoritesGrid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(190px, 1fr)
+        );
+
+    gap:
+        24px;
+
+    width:
+        100%;
+}
+
+
+/* ============================================================
+   12 — CARD DO FILME
+   ============================================================ */
+
+.movie-card {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-width:
+        0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b20,
+            #111114
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+
+    isolation:
+        isolate;
+
+    transform:
+        translateZ(0);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+.movie-card:hover {
+    transform:
+        translateY(-9px)
+        scale(1.018);
+
+    background:
+        var(--card-hover);
+
+    border-color:
+        var(--border-red);
+
+    box-shadow:
+        var(--shadow-hover),
+        0 0 35px rgba(229, 9, 20, 0.08);
+}
+
+
+/* ============================================================
+   13 — FOTOS / POSTERS DOS FILMES
+   ============================================================ */
+
+.movie-card img {
+    width:
+        100%;
+
+    aspect-ratio:
+        2 / 3;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center;
+
+    background:
+        #050505;
+
+    transition:
+        transform 0.6s cubic-bezier(.2, .7, .2, 1),
+        filter 0.45s ease;
+}
+
+.movie-card:hover img {
+    transform:
+        scale(1.08);
+
+    filter:
+        brightness(0.70)
+        saturate(1.15)
+        contrast(1.03);
+}
+
+
+/* ============================================================
+   14 — GRADIENTE SOBRE O POSTER
+   ============================================================ */
+
+.movie-card::before {
+    content: "";
+
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    bottom:
+        0;
+
+    height:
+        60%;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.97),
+            rgba(0, 0, 0, 0.58),
+            transparent
+        );
+
+    opacity:
+        0.9;
+}
+
+
+/* ============================================================
+   15 — EFEITO DE BRILHO
+   ============================================================ */
+
+.movie-card::after {
+    content: "";
+
+    position:
+        absolute;
+
+    z-index:
+        6;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 25%,
+            rgba(255, 255, 255, 0.08) 48%,
+            transparent 65%
+        );
+
+    transform:
+        translateX(-130%);
+
+    transition:
+        transform 0.75s ease;
+}
+
+.movie-card:hover::after {
+    transform:
+        translateX(130%);
+}
+
+
+/* ============================================================
+   16 — CONTEÚDO DOS CARDS
+   ============================================================ */
+
+.movie-card-content {
+    position:
+        relative;
+
+    z-index:
+        8;
+
+    padding:
+        15px;
+}
+
+.movie-card h3 {
+    margin-bottom:
+        5px;
+
+    color:
+        var(--white);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        850;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+}
+
+.movie-card p {
+    color:
+        var(--text-light);
+
+    font-size:
+        0.83rem;
+}
+
+
+/* ============================================================
+   17 — RATING / NOTA
+   ============================================================ */
+
+.rating {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    color:
+        var(--gold);
+
+    font-weight:
+        800;
+}
+
+.rating svg {
+    width:
+        16px;
+
+    height:
+        16px;
+
+    fill:
+        var(--gold);
+}
+
+
+/* ============================================================
+   18 — FAVORITO
+   ============================================================ */
+
+.favorite-btn {
+    position:
+        absolute;
+
+    top:
+        12px;
+
+    right:
+        12px;
+
+    z-index:
+        15;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        41px;
+
+    height:
+        41px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0, 0, 0, 0.68);
+
+    color:
+        #ffffff;
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.favorite-btn:hover {
+    transform:
+        scale(1.12);
+
+    background:
+        rgba(229, 9, 20, 0.18);
+
+    color:
+        var(--red-light);
+
+    border-color:
+        rgba(229, 9, 20, 0.5);
+}
+
+.favorite-btn.active {
+    color:
+        var(--red);
+
+    background:
+        rgba(229, 9, 20, 0.18);
+
+    border-color:
+        rgba(229, 9, 20, 0.45);
+
+    animation:
+        heartPop 0.35s ease;
+}
+
+.favorite-btn.active svg {
+    fill:
+        var(--red);
+}
+
+@keyframes heartPop {
+
+    0% {
+        transform:
+            scale(0.7);
+    }
+
+    60% {
+        transform:
+            scale(1.3);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+}
+
+
+/* ============================================================
+   19 — CLASSIFICAÇÃO INDICATIVA
+   ============================================================ */
+
+.badge,
+.classification {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        32px;
+
+    min-height:
+        25px;
+
+    padding:
+        4px 8px;
+
+    border-radius:
+        5px;
+
+    font-size:
+        0.73rem;
+
+    font-weight:
+        900;
+
+    line-height:
+        1;
+}
+
+
+/* LIVRE */
+
+.badge-livre,
+.classification-livre {
+    background:
+        var(--green);
+
+    color:
+        #061608;
+}
+
+
+/* 12 / 14 */
+
+.badge-12,
+.badge-14,
+.classification-12,
+.classification-14 {
+    background:
+        var(--yellow);
+
+    color:
+        #181200;
+}
+
+
+/* 16 / 18 */
+
+.badge-16,
+.badge-18,
+.classification-16,
+.classification-18 {
+    background:
+        var(--red);
+
+    color:
+        #ffffff;
+}
+
+
+/* ============================================================
+   20 — MODAL
+   ============================================================ */
+
+.modal {
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        5000;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    background:
+        rgba(0, 0, 0, 0.84);
+
+    backdrop-filter:
+        blur(9px);
+
+    -webkit-backdrop-filter:
+        blur(9px);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.modal.active,
+.modal.show,
+.modal.open {
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
+}
+
+
+/* ============================================================
+   21 — CONTEÚDO DO MODAL
+   ============================================================ */
+
+.modal-content {
+    position:
+        relative;
+
+    width:
+        min(950px, 100%);
+
+    max-height:
+        92vh;
+
+    overflow:
+        hidden auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #202025,
+            #0f0f12
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.11);
+
+    border-radius:
+        17px;
+
+    box-shadow:
+        0 35px 110px rgba(0, 0, 0, 0.85);
+
+    transform:
+        translateY(25px)
+        scale(0.97);
+
+    transition:
+        transform 0.35s cubic-bezier(.2, .7, .2, 1);
+}
+
+.modal.active .modal-content,
+.modal.show .modal-content,
+.modal.open .modal-content {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* ============================================================
+   22 — BOTÃO FECHAR
+   ============================================================ */
+
+.modal-close,
+#closeModal {
+    position:
+        absolute;
+
+    top:
+        14px;
+
+    right:
+        14px;
+
+    z-index:
+        30;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0, 0, 0, 0.72);
+
+    color:
+        #ffffff;
+
+    font-size:
+        1.4rem;
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+.modal-close:hover,
+#closeModal:hover {
+    transform:
+        rotate(90deg)
+        scale(1.05);
+
+    background:
+        var(--red);
+}
+
+
+/* ============================================================
+   23 — TRAILER
+   ============================================================ */
+
+.trailer-container {
+    position:
+        relative;
+
+    width:
+        100%;
+
+    aspect-ratio:
+        16 / 9;
+
+    background:
+        #000;
+}
+
+.trailer-container iframe,
+.modal iframe {
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    min-height:
+        350px;
+
+    border:
+        0;
+}
+
+.modal video {
+    display:
+        block;
+
+    width:
+        100%;
+
+    max-height:
+        500px;
+
+    background:
+        #000;
+}
+
+
+/* ============================================================
+   24 — CORPO DO MODAL
+   ============================================================ */
+
+.modal-body {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        15px;
+
+    padding:
+        25px;
+}
+
+.modal h2,
+.modal h3 {
+    margin:
+        0;
+
+    padding:
+        0;
+
+    color:
+        var(--white);
+}
+
+.modal h2::before,
+.modal h3::before {
+    display:
+        none;
+}
+
+.modal p {
+    color:
+        #c7c7cd;
+
+    line-height:
+        1.75;
+}
+
+
+/* ============================================================
+   25 — META DO FILME
+   ============================================================ */
+
+.modal-meta {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+}
+
+.modal-meta span {
+    color:
+        var(--text-light);
+
+    font-size:
+        0.88rem;
+}
+
+
+/* ============================================================
+   26 — BOTÕES DO MODAL
+   ============================================================ */
+
+.modal-actions {
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+
+    margin-top:
+        10px;
+}
+
+.modal-actions button {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    min-height:
+        43px;
+
+    padding:
+        9px 16px;
+
+    background:
+        #25252b;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-small);
+
+    color:
+        #ffffff;
+
+    font-weight:
+        750;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.modal-actions button:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        #303038;
+
+    border-color:
+        var(--border-light);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ============================================================
+   27 — LIKE
+   ============================================================ */
+
+#likeBtn.active,
+.like-btn.active,
+button.like.active {
+    color:
+        var(--green);
+
+    background:
+        rgba(53, 214, 90, 0.12);
+
+    border-color:
+        rgba(53, 214, 90, 0.4);
+}
+
+#likeBtn:hover,
+.like-btn:hover,
+button.like:hover {
+    color:
+        var(--green);
+}
+
+
+/* ============================================================
+   28 — DISLIKE
+   ============================================================ */
+
+#dislikeBtn.active,
+.dislike-btn.active,
+button.dislike.active {
+    color:
+        var(--red);
+
+    background:
+        rgba(229, 9, 20, 0.12);
+
+    border-color:
+        rgba(229, 9, 20, 0.4);
+}
+
+
+/* ============================================================
+   29 — VISTO
+   ============================================================ */
+
+#watchedBtn.active,
+.watched-btn.active,
+button.watched.active {
+    color:
+        var(--green);
+
+    background:
+        rgba(53, 214, 90, 0.12);
+
+    border-color:
+        rgba(53, 214, 90, 0.4);
+}
+
+
+/* ============================================================
+   30 — SVG
+   ============================================================ */
+
+svg {
+    width:
+        20px;
+
+    height:
+        20px;
+
+    fill:
+        currentColor;
+
+    transition:
+        transform var(--transition),
+        fill var(--transition),
+        color var(--transition);
+}
+
+button:hover svg {
+    transform:
+        scale(1.1);
+}
+
+button.active svg {
+    fill:
+        currentColor;
+}
+
+
+/* ============================================================
+   31 — ESTADO VAZIO
+   ============================================================ */
+
+.empty-message {
+    padding:
+        35px 20px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px dashed rgba(255, 255, 255, 0.11);
+
+    border-radius:
+        var(--radius);
+
+    color:
+        var(--text-muted);
+
+    text-align:
+        center;
+}
+
+
+/* ============================================================
+   32 — FOOTER
+   ============================================================ */
+
+footer {
+    width:
+        100%;
+
+    padding:
+        35px 20px;
+
+    background:
+        #050506;
+
+    border-top:
+        1px solid var(--border);
+
+    color:
+        var(--text-muted);
+
+    text-align:
+        center;
+
+    font-size:
+        0.85rem;
+}
+
+footer strong {
+    color:
+        var(--text-light);
+}
+
+
+/* ============================================================
+   33 — FOCUS / ACESSIBILIDADE
+   ============================================================ */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+    outline:
+        2px solid var(--gold);
+
+    outline-offset:
+        3px;
+}
+
+
+/* ============================================================
+   34 — ENTRADA DOS CARDS
+   ============================================================ */
+
+.movie-card {
+    animation:
+        cardAppear 0.45s ease both;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ============================================================
+   35 — TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    #moviesGrid,
+    #favoritesGrid {
+        grid-template-columns:
+            repeat(
+                auto-fill,
+                minmax(160px, 1fr)
+            );
+
+        gap:
+            17px;
+    }
+
+    main {
+        width:
+            94%;
+    }
+
+    .modal {
+        padding:
+            15px;
+    }
+
+    .modal-content {
+        max-height:
+            94vh;
+    }
+}
+
+
+/* ============================================================
+   36 — CELULAR
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    h1 {
+        width:
+            94%;
+
+        padding:
+            20px 0 13px;
+
+        font-size:
+            1.7rem;
+    }
+
+    #searchInput {
+        width:
+            94%;
+
+        height:
+            46px;
+    }
+
+    #genreFilters {
+        width:
+            94%;
+
+        padding-bottom:
+            18px;
+    }
+
+    main {
+        width:
+            94%;
+
+        padding-top:
+            10px;
+    }
+
+    h2 {
+        margin-top:
+            28px;
+
+        font-size:
+            1.3rem;
+    }
+
+    h2::before {
+        width:
+            4px;
+
+        height:
+            22px;
+    }
+
+    #moviesGrid,
+    #favoritesGrid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap:
+            12px;
+    }
+
+    .movie-card-content {
+        padding:
+            10px;
+    }
+
+    .movie-card h3 {
+        font-size:
+            0.86rem;
+    }
+
+    .movie-card p {
+        font-size:
+            0.72rem;
+    }
+
+    .favorite-btn {
+        width:
+            35px;
+
+        height:
+            35px;
+
+        top:
+            8px;
+
+        right:
+            8px;
+    }
+
+    .modal {
+        padding:
+            7px;
+    }
+
+    .modal-content {
+        max-height:
+            96vh;
+
+        border-radius:
+            12px;
+    }
+
+    .modal-body {
+        padding:
+            17px;
+    }
+
+    .modal iframe {
+        min-height:
+            210px;
+    }
+
+    .modal-actions {
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            8px;
+    }
+
+    .modal-actions button {
+        width:
+            100%;
+
+        padding:
+            9px 7px;
+
+        font-size:
+            0.8rem;
+    }
+}
+
+
+/* ============================================================
+   37 — CELULAR PEQUENO
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+    #moviesGrid,
+    #favoritesGrid {
+        gap:
+            9px;
+    }
+
+    .movie-card-content {
+        padding:
+            8px;
+    }
+
+    .movie-card h3 {
+        font-size:
+            0.79rem;
+    }
+
+    .modal-actions {
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+/* ============================================================
+   38 — REDUÇÃO DE MOVIMENTO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior:
+            auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
     }
 }
