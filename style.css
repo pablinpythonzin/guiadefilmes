@@ -323,6 +323,7 @@ main {
     height: 100%;
     display: block;
     object-fit: cover;
+    background-color: #1c1d22; /* Fundo escuro para quando a foto falhar */
     transition: transform 0.5s ease;
 }
 
