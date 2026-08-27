@@ -91,6 +91,29 @@ const filmes = [
         capa: "https://image.tmdb.org/t/p/w500/3Z0U49xXl04v7W2X6S0lG1213qW.jpg",
         trailerId: "aeVkbNka9HM"
     }
+
+   {
+        id: 9,
+        titulo: "De Volta para o Futuro",
+        genero: "anos80",
+        generoNome: "Anos 80 / Sci-Fi",
+        sinopse: "Um jovem viaja no tempo usando um DeLorean modificado por um cientista excêntrico.",
+        classificacao: "L",
+        nota: "8.5",
+        capa: "https://image.tmdb.org/t/p/w500/fTmtP3L7A24T9KkP2z6E8P4S6z0.jpg",
+        trailerId: "qvsgGtivCgs"
+    },
+    {
+        id: 10,
+        titulo: "O Exterminador do Futuro",
+        genero: "anos80",
+        generoNome: "Anos 80 / Ação",
+        sinopse: "Um ciborgue é enviado do futuro para assassinar a mãe do futuro líder da resistência humanitária.",
+        classificacao: "14",
+        nota: "8.1",
+        capa: "https://image.tmdb.org/t/p/w500/qA31S0zSgS9x0q5A2mH12zS9R8.jpg",
+        trailerId: "k64P4l2W2pM"
+    }
 ];
 
 // SVG padrão de fallback para impedir imagem quebrada
@@ -316,3 +339,6 @@ document.addEventListener("DOMContentLoaded", function () {
     atualizarCatalogo();
     renderizarFavoritos();
 });
+function alternarContraste() {
+    document.body.classList.toggle("high-contrast");
+}
