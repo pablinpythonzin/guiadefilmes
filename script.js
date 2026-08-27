@@ -88,7 +88,7 @@ const filmes = [
         sinopse: "Dois agentes do FBI precisam se disfarçar como duas socialites para protegê-las e acabam vivendo situações hilárias.",
         classificacao: "12",
         nota: "7.0",
-        capa: "https://image.tmdb.org/t/p/w500/1X6k6WffnB7eec4tF5Qc1kZg28W.jpg",
+        capa: "https://image.tmdb.org/t/p/w500/39hN9Zfefb52yHee7WfWb2WpWms.jpg",
         trailerId: "aeVkbNka9HM"
     },
     {
@@ -99,7 +99,7 @@ const filmes = [
         sinopse: "Um jovem viaja no tempo usando um DeLorean modificado por um cientista excêntrico.",
         classificacao: "L",
         nota: "8.5",
-        capa: "https://image.tmdb.org/t/p/w500/fTmtP3L7A24T9KkP2z6E8P4S6z0.jpg",
+        capa: "https://image.tmdb.org/t/p/w500/296bF28eCjhj9sK0505pX4P31.jpg",
         trailerId: "qvsgGtivCgs"
     },
     {
@@ -110,10 +110,11 @@ const filmes = [
         sinopse: "Um ciborgue é enviado do futuro para assassinar a mãe do futuro líder da resistência humanitária.",
         classificacao: "14",
         nota: "8.1",
-        capa: "https://image.tmdb.org/t/p/w500/vGk4j0wLg7R78GgY0F7c07h2a6n.jpg",
+        capa: "https://image.tmdb.org/t/p/w500/q8q2n3Xj9z5k8KjL18N27s4.jpg",
         trailerId: "k64P4l2W2pM"
     }
 ];
+
 // SVG padrão de fallback para impedir imagem quebrada
 const PLACEHOLDER_IMG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='50%' font-family='sans-serif' font-size='30' fill='%239ca3af' text-anchor='middle'>🎬 Sem Imagem</text></svg>";
 
@@ -271,8 +272,10 @@ function atualizarBotoes() {
 }
 
 function alternarFavorito(id) {
-    id = Number(id);
-    favoritos = favoritos.includes(id) ? favoritos.filter(item => item !== id) : [...favoritos, id];
+    const targetId = id ? Number(id) : (filmeAtual ? filmeAtual.id : null);
+    if (!targetId) return;
+
+    favoritos = favoritos.includes(targetId) ? favoritos.filter(item => item !== targetId) : [...favoritos, targetId];
     salvarDados();
     atualizarCatalogo();
     renderizarFavoritos();
@@ -307,6 +310,10 @@ function alternarDislike() {
     atualizarBotoes();
 }
 
+function alternarContraste() {
+    document.body.classList.toggle("high-contrast");
+}
+
 document.addEventListener("click", function (e) {
     const btnDet = e.target.closest("[data-details]");
     if (btnDet) {
@@ -337,6 +344,3 @@ document.addEventListener("DOMContentLoaded", function () {
     atualizarCatalogo();
     renderizarFavoritos();
 });
-function alternarContraste() {
-    document.body.classList.toggle("high-contrast");
-}
