@@ -323,8 +323,15 @@ main {
     height: 100%;
     display: block;
     object-fit: cover;
-    background-color: #1c1d22; /* Fundo escuro para quando a foto falhar */
+    background-color: #1c1d22;
     transition: transform 0.5s ease;
+    
+    /* Regras para conter o texto alt caso a imagem falhe */
+    color: #9ca3af;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 1.2;
+    overflow: hidden;
 }
 
 .movie-card:hover .movie-poster img {
@@ -649,7 +656,7 @@ main {
     gap: 5px;
     padding: 10px;
     border: 1px solid var(--border);
-    border-radius: 9px;
+    border-radius: 99px;
     background: #19191f;
     color: #ddd;
     cursor: pointer;
