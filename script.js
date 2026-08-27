@@ -22,7 +22,7 @@ const filmes = [
         sinopse: "Riley está entrando na adolescência e novas emoções aparecem em sua mente.",
         classificacao: "L",
         nota: "8.5",
-        capa: "https://image.tmdb.org/t/p/w500/9b2h9j48H4d2f0vY0p7Kqg9p44S.jpg",
+        capa: "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmfd9FiWF2gA92xniX.jpg",
         trailerId: "LEjhY15eCx0"
     },
     {
@@ -55,7 +55,7 @@ const filmes = [
         sinopse: "Arthur Fleck é um homem ignorado pela sociedade que inicia uma transformação que mudará Gotham para sempre.",
         classificacao: "16",
         nota: "8.4",
-        capa: "https://image.tmdb.org/t/p/w500/udDclC23zEkBhNvChFfsUt0YqO.jpg",
+        capa: "https://image.tmdb.org/t/p/w500/v0e2WMxT4vy2vVoMy2aNW5v28bd.jpg",
         trailerId: "zAGVQLHvwOY"
     },
     {
@@ -88,11 +88,10 @@ const filmes = [
         sinopse: "Dois agentes do FBI precisam se disfarçar como duas socialites para protegê-las e acabam vivendo situações hilárias.",
         classificacao: "12",
         nota: "7.0",
-        capa: "https://image.tmdb.org/t/p/w500/3Z0U49xXl04v7W2X6S0lG1213qW.jpg",
+        capa: "https://image.tmdb.org/t/p/w500/1X6k6WffnB7eec4tF5Qc1kZg28W.jpg",
         trailerId: "aeVkbNka9HM"
     },
-
-   {
+    {
         id: 9,
         titulo: "De Volta para o Futuro",
         genero: "anos80",
@@ -111,11 +110,10 @@ const filmes = [
         sinopse: "Um ciborgue é enviado do futuro para assassinar a mãe do futuro líder da resistência humanitária.",
         classificacao: "14",
         nota: "8.1",
-        capa: "https://image.tmdb.org/t/p/w500/qA31S0zSgS9x0q5A2mH12zS9R8.jpg",
+        capa: "https://image.tmdb.org/t/p/w500/vGk4j0wLg7R78GgY0F7c07h2a6n.jpg",
         trailerId: "k64P4l2W2pM"
     }
 ];
-
 // SVG padrão de fallback para impedir imagem quebrada
 const PLACEHOLDER_IMG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='50%' font-family='sans-serif' font-size='30' fill='%239ca3af' text-anchor='middle'>🎬 Sem Imagem</text></svg>";
 
