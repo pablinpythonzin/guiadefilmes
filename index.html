@@ -7,30 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="site-header">
-    <div class="header-content">
-        <a href="#" class="logo">🍿 <span>Popcorn Hub</span></a>
+        <div class="header-content">
+            <a href="#" class="logo">🍿 <span>Popcorn Hub</span></a>
 
-        <form class="search-form" onsubmit="event.preventDefault();">
-            <input type="text" id="movie-search" placeholder="Buscar filmes...">
-        </form>
+            <form class="search-form" onsubmit="event.preventDefault();">
+                <input type="text" id="movie-search" placeholder="Buscar filmes...">
+            </form>
 
-        <!-- Botão de Alto Contraste posicionado junto ao topo -->
-        <button id="btn-contraste" onclick="alternarContraste()" aria-label="Alternar Alto Contraste">
-            Acessibilidade (Alto Contraste)
-        </button>
-    </div>
+            <button id="btn-contraste" aria-label="Alternar Alto Contraste">
+                Acessibilidade (Alto Contraste)
+            </button>
+        </div>
 
-    <!-- Filtros por Categoria -->
-    <div class="genre-filters">
-        <button class="genre-btn active" data-genre="all">Todos</button>
-        <button class="genre-btn" data-genre="action">Ação</button>
-        <button class="genre-btn" data-genre="comedy">Comédia</button>
-        <button class="genre-btn" data-genre="drama">Drama</button>
-        <button class="genre-btn" data-genre="sci-fi">Sci-Fi</button>
-        <button class="genre-btn" data-genre="anos80">Anos 80</button>
-    </div>
-</header>
+        <!-- Filtros por Categoria -->
+        <div class="genre-filters">
+            <button class="genre-btn active" data-genre="all">Todos</button>
+            <button class="genre-btn" data-genre="action">Ação</button>
+            <button class="genre-btn" data-genre="comedy">Comédia</button>
+            <button class="genre-btn" data-genre="drama">Drama</button>
+            <button class="genre-btn" data-genre="sci-fi">Sci-Fi</button>
+            <button class="genre-btn" data-genre="anos80">Anos 80</button>
+        </div>
+    </header>
+
     <section class="hero-banner">
         <div class="hero-content">
             <span class="hero-badge">POPCORN HUB</span>
@@ -57,6 +58,7 @@
         </section>
     </main>
 
+    <!-- Modal de Detalhes -->
     <div id="movie-modal" class="modal" aria-hidden="true">
         <div class="modal-overlay" onclick="fecharModal()"></div>
         <div class="modal-content">
@@ -77,10 +79,10 @@
                 </div>
 
                 <div class="movie-actions">
-                    <button id="favorite-btn" class="action-btn" onclick="alternarFavorito(filmeAtual.id)">Favorito</button>
-                    <button id="watched-btn" class="action-btn" onclick="alternarVisto()">Visto</button>
-                    <button id="like-btn" class="action-btn" onclick="alternarLike()">Gostei</button>
-                    <button id="dislike-btn" class="action-btn" onclick="alternarDislike()">Não Gostei</button>
+                    <button id="favorite-btn" class="action-btn">Favorito</button>
+                    <button id="watched-btn" class="action-btn">Visto</button>
+                    <button id="like-btn" class="action-btn">Gostei</button>
+                    <button id="dislike-btn" class="action-btn">Não Gostei</button>
                 </div>
             </div>
         </div>
@@ -90,7 +92,7 @@
         <p><strong>Popcorn Hub</strong> &copy; Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Widget VLibras (LIBRAS) -->
+    <!-- Widget VLibras -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
@@ -102,7 +104,6 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    <!-- Seu script principal por último -->
     <script src="script.js"></script>
 </body>
 </html>
