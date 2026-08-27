@@ -90,7 +90,7 @@ const filmes = [
         nota: "7.0",
         capa: "https://image.tmdb.org/t/p/w500/3Z0U49xXl04v7W2X6S0lG1213qW.jpg",
         trailerId: "aeVkbNka9HM"
-    }
+    },
 
    {
         id: 9,
