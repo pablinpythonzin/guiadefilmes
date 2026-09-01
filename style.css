@@ -1092,3 +1092,46 @@ main {
     background: #555;
     cursor: not-allowed;
 }
+
+/* Container principal do modal em coluna única */
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+/* Alinhamento dos botões em linha contínua */
+.movie-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-btn {
+    flex: 1;
+    min-width: 110px;
+    padding: 10px 14px;
+    background: #252530;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.action-btn:hover {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+/* Modal com rolagem suave para conteúdo longo */
+.modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
