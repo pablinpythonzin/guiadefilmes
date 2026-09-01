@@ -62,22 +62,70 @@
     <div id="movie-modal" class="modal" aria-hidden="true">
         <div class="modal-overlay" onclick="fecharModal()"></div>
         <div class="modal-content">
-            <button class="modal-close" onclick="fecharModal()">&times;</button>
+    <button class="modal-close" onclick="fecharModal()">&times;</button>
+    
+    <!-- 1. Trailer no topo -->
+    <div class="trailer-container">
+        <iframe id="movie-trailer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div class="movie-details">
+        <!-- 2. Informações do Filme -->
+        <div class="movie-info">
+            <h2 id="modal-title"></h2>
+            <div class="movie-meta">
+                <span id="modal-rating"></span>
+                <span id="modal-age-rating"></span>
+            </div>
+            <p id="modal-synopsis"></p>
+        </div>
+
+        <!-- 3. Botões de Ação Lado a Lado -->
+        <div class="movie-actions">
+            <button id="favorite-btn" class="action-btn">❤️ Favorito</button>
+            <button id="watched-btn" class="action-btn">👁️ Visto</button>
+            <button id="like-btn" class="action-btn">👍 Gostei</button>
+            <button id="dislike-btn" class="action-btn">👎 Não Gostei</button>
+        </div>
+
+        <hr class="modal-divider">
+
+        <!-- 4. Seção de Ingressos e Assentos (Abaixo das informações) -->
+        <div class="sessao-container">
+            <h3>🎟️ Comprar Ingresso - Sessões de Setembro / 2026</h3>
             
-            <div class="trailer-container">
-                <iframe id="movie-trailer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <p class="sessao-label">Selecione a Data:</p>
+            <div class="dias-list">
+                <button class="btn-dia active" data-data="02/09/2026">Qua - 02/09</button>
+                <button class="btn-dia" data-data="05/09/2026">Sáb - 05/09</button>
+                <button class="btn-dia" data-data="10/09/2026">Qui - 10/09</button>
+                <button class="btn-dia" data-data="15/09/2026">Ter - 15/09</button>
+                <button class="btn-dia" data-data="20/09/2026">Dom - 20/09</button>
+                <button class="btn-dia" data-data="25/09/2026">Sex - 25/09</button>
             </div>
 
-            <div class="movie-details">
-                <div class="movie-info">
-                    <h2 id="modal-title"></h2>
-                    <div class="movie-meta">
-                        <span id="modal-rating"></span>
-                        <span id="modal-age-rating"></span>
-                    </div>
-                    <p id="modal-synopsis"></p>
-                </div>
+            <p class="sessao-label">Selecione o Horário:</p>
+            <div id="horarios-container" class="horarios-list"></div>
 
+            <ul class="assentos-legenda">
+                <li><span class="exemplo-assento livre"></span> Livre</li>
+                <li><span class="exemplo-assento selecionado"></span> Selecionado</li>
+                <li><span class="exemplo-assento ocupado"></span> Ocupado</li>
+            </ul>
+
+            <div class="cinema-screen">TELA DO CINEMA</div>
+
+            <div id="assentos-grid" class="assentos-grid"></div>
+
+            <div class="resumo-reserva">
+                <p>Sessão: <strong id="sessao-selecionada-texto">02/09/2026 às 13:00</strong></p>
+                <p>Assentos Selecionados: <strong id="assentos-qtd">0</strong></p>
+                <p class="preco-destaque">Total: R$ <span id="preco-total">0,00</span></p>
+                <button id="btn-confirmar" class="btn-confirmar" disabled onclick="confirmarReserva()">Confirmar Reserva</button>
+            </div>
+        </div>
+    </div>
+</div>
                 <div class="movie-actions">
                     <button id="favorite-btn" class="action-btn">Favorito</button>
                     <button id="watched-btn" class="action-btn">Visto</button>
