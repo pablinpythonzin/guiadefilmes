@@ -906,3 +906,189 @@ main {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Divisor do Modal */
+.modal-divider {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 25px 0;
+}
+
+/* Container de Sessões */
+.sessao-container {
+    background: #121218;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.sessao-container h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.sessao-label {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 10px 0 5px 0;
+}
+
+/* Lista de Dias de Setembro */
+.dias-list {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.btn-dia {
+    background: #1a1a24;
+    color: #aaa;
+    border: 1px solid #333;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-dia:hover, .btn-dia.active {
+    background: #e50914;
+    color: #fff;
+    border-color: #e50914;
+}
+
+/* Lista de Horários */
+.horarios-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.btn-horario {
+    background: #2a2a36;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-horario:hover, .btn-horario.active {
+    background: #ffc107;
+    color: #000;
+    font-weight: bold;
+    border-color: #ffc107;
+}
+
+/* Legenda de Assentos */
+.assentos-legenda {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.assentos-legenda li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.exemplo-assento {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.exemplo-assento.livre { background-color: #444451; }
+.exemplo-assento.selecionado { background-color: #ffc107; }
+.exemplo-assento.ocupado { background-color: #e50914; }
+
+/* Tela do Cinema */
+.cinema-screen {
+    background: #ffffff;
+    height: 8px;
+    width: 70%;
+    margin: 10px auto 25px auto;
+    box-shadow: 0 3px 12px rgba(255, 255, 255, 0.7);
+    text-align: center;
+    color: #888;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* Grade de Assentos */
+.assentos-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    max-width: 280px;
+    margin: 0 auto 20px auto;
+}
+
+.assento {
+    background-color: #444451;
+    height: 24px;
+    width: 24px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.assento:hover:not(.ocupado) {
+    transform: scale(1.15);
+}
+
+.assento.selecionado {
+    background-color: #ffc107;
+}
+
+.assento.ocupado {
+    background-color: #e50914;
+    cursor: not-allowed;
+}
+
+/* Resumo da Reserva */
+.resumo-reserva {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+    color: #ddd;
+}
+
+.preco-destaque {
+    font-size: 1.1rem;
+    color: #ffc107;
+    margin: 8px 0;
+}
+
+.btn-confirmar {
+    background: #e50914;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.btn-confirmar:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
