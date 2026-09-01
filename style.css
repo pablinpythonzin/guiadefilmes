@@ -1244,3 +1244,110 @@ main {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
     margin: 20px auto 35px auto !important;
 }
+
+/* RESET E SOBREPOSIÇÃO DO MODAL */
+.modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 9999 !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* CONTAINER LARGO DA JANELA */
+.modal-container {
+    background-color: #14141d !important;
+    width: 90% !important;
+    max-width: 950px !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    border-radius: 12px !important;
+    padding: 30px !important;
+    position: relative !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* BOTÃO FECHAR */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* TRAILER LARGURA TOTAL */
+.trailer-container {
+    position: relative;
+    width: 100% !important;
+    padding-bottom: 56.25% !important; /* Proporção 16:9 */
+    height: 0 !important;
+    margin-bottom: 20px !important;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.trailer-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+}
+
+/* DETALHES DO FILME */
+.movie-details {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.movie-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+.action-btn {
+    flex: 1;
+    min-width: 130px;
+    padding: 10px;
+}
+
+/* ESTRUTURA DE INGRESSOS E ASSENTOS */
+.sessao-container {
+    width: 100% !important;
+    background: #1c1c28 !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+}
+
+.assentos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(8, 1fr) !important;
+    gap: 10px !important;
+    max-width: 420px !important;
+    margin: 20px auto !important;
+}
+
+.assento {
+    height: 32px !important;
+    width: 32px !important;
+}
