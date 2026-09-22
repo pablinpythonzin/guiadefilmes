@@ -5,115 +5,324 @@
 const filmes = [
     {
         id: 1,
-        titulo: "Homem-Aranha: Sem Volta Para Casa",
-        genero: "action",
-        generoNome: "Ação",
-        sinopse: "Peter Parker precisa lidar com as consequências de sua identidade revelada e acaba enfrentando ameaças de outros universos.",
+        titulo: "Vingadores: Ultimato",
+        genero: "pop",
+        generoNome: "Pop",
+        sinopse: "Após o estalo de Thanos dizimar metade do universo, os Vingadores remanescentes se unem numa última missão para desfazer a tragédia e enfrentar o titã louco de vez.",
         classificacao: "12",
-        nota: "8.7",
-        capa: "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
-        trailerId: "JfVOs4VSpmA"
+        nota: "8.4",
+        capa: "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg",
+        trailerId: "TcMBFSGVi1c"
     },
     {
         id: 2,
-        titulo: "Divertida Mente 2",
-        genero: "comedy",
-        generoNome: "Comédia",
-        sinopse: "Riley está entrando na adolescência e novas emoções aparecem em sua mente.",
-        classificacao: "L",
-        nota: "8.5",
-        capa: "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmfd9FiWF2gA92xniX.jpg",
-        trailerId: "LEjhY15eCx0"
+        titulo: "Pantera Negra",
+        genero: "pop",
+        generoNome: "Pop",
+        sinopse: "T'Challa retorna a Wakanda para assumir o trono, mas precisa proteger seu povo e o vibranium de ameaças que colocam em risco o futuro da nação mais avançada do planeta.",
+        classificacao: "12",
+        nota: "7.3",
+        capa: "https://upload.wikimedia.org/wikipedia/en/d/d6/Black_Panther_%28film%29_poster.jpg",
+        trailerId: "xjDjIWPwcPU"
     },
     {
         id: 3,
-        titulo: "Interestelar",
-        genero: "sci-fi",
-        generoNome: "Sci-Fi",
-        sinopse: "Um grupo de astronautas parte em uma missão através de um buraco de minhoca em busca de um novo lar para a humanidade.",
-        classificacao: "10",
-        nota: "8.7",
-        capa: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-        trailerId: "zSWdZVtXT7E"
+        titulo: "Jurassic Park",
+        genero: "pop",
+        generoNome: "Pop",
+        sinopse: "Um bilionário cria um parque temático com dinossauros clonados a partir de DNA fóssil, mas uma falha de segurança transforma a atração em um pesadelo de sobrevivência.",
+        classificacao: "12",
+        nota: "8.2",
+        capa: "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg",
+        trailerId: "QWBKEmWWL38"
     },
     {
         id: 4,
-        titulo: "Batman",
-        genero: "action",
-        generoNome: "Ação",
-        sinopse: "Batman investiga uma série de crimes cometidos por um misterioso assassino em Gotham City.",
-        classificacao: "14",
-        nota: "8.0",
-        capa: "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
-        trailerId: "mqqft2x_Aa4"
+        titulo: "Homem-Aranha: Sem Volta Para Casa",
+        genero: "pop",
+        generoNome: "Pop",
+        sinopse: "Peter Parker precisa lidar com as consequências de sua identidade revelada e acaba enfrentando vilões de outros universos ao pedir ajuda ao Doutor Estranho.",
+        classificacao: "12",
+        nota: "8.2",
+        capa: "https://upload.wikimedia.org/wikipedia/en/0/00/Spider-Man_No_Way_Home_poster.jpg",
+        trailerId: "JfVOs4VSpmA"
     },
     {
         id: 5,
-        titulo: "Coringa",
-        genero: "drama",
-        generoNome: "Drama",
-        sinopse: "Arthur Fleck é um homem ignorado pela sociedade que inicia uma transformação que mudará Gotham para sempre.",
-        classificacao: "16",
-        nota: "8.4",
-        capa: "https://image.tmdb.org/t/p/w500/v0e2WMxT4vy2vVoMy2aNW5v28bd.jpg",
-        trailerId: "zAGVQLHvwOY"
+        titulo: "Interestelar",
+        genero: "ficcao",
+        generoNome: "Ficção Científica",
+        sinopse: "Um grupo de astronautas atravessa um buraco de minhoca em busca de um novo lar para a humanidade, enquanto o tempo passa de forma diferente para quem fica na Terra.",
+        classificacao: "10",
+        nota: "8.7",
+        capa: "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+        trailerId: "zSWdZVtXT7E"
     },
     {
         id: 6,
-        titulo: "Avatar: O Caminho da Água",
-        genero: "sci-fi",
-        generoNome: "Sci-Fi",
-        sinopse: "Jake Sully e sua família enfrentam novas ameaças enquanto procuram segurança entre os povos dos oceanos de Pandora.",
+        titulo: "Duna",
+        genero: "ficcao",
+        generoNome: "Ficção Científica",
+        sinopse: "O jovem Paul Atreides é levado ao planeta deserto Arrakis, onde disputas por uma valiosa especiaria decidem o destino de famílias e impérios em toda a galáxia.",
         classificacao: "12",
-        nota: "7.6",
-        capa: "https://image.tmdb.org/t/p/w500/t6HIrqToCMzjJPebccAMasESvsC.jpg",
-        trailerId: "d9MyW72ELq0"
+        nota: "8.0",
+        capa: "https://upload.wikimedia.org/wikipedia/en/8/8e/Dune_%282021_film%29.jpg",
+        trailerId: "8g18jFHCLXk"
     },
     {
         id: 7,
-        titulo: "Oppenheimer",
-        genero: "drama",
-        generoNome: "Drama",
-        sinopse: "A história do físico J. Robert Oppenheimer e de sua participação no desenvolvimento da bomba atômica.",
+        titulo: "Matrix",
+        genero: "ficcao",
+        generoNome: "Ficção Científica",
+        sinopse: "Um programador descobre que a realidade que conhece é uma simulação controlada por máquinas e precisa escolher entre a verdade dolorosa e a ilusão confortável.",
         classificacao: "16",
-        nota: "8.6",
-        capa: "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGvjWd1sCYw.jpg",
-        trailerId: "uYPbbksJxIg"
+        nota: "8.7",
+        capa: "https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png",
+        trailerId: "vKQi3bBA1y8"
     },
     {
         id: 8,
-        titulo: "As Branquelas",
-        genero: "comedy",
-        generoNome: "Comédia",
-        sinopse: "Dois agentes do FBI precisam se disfarçar como duas socialites para protegê-las e acabam vivendo situações hilárias.",
+        titulo: "Avatar: O Caminho da Água",
+        genero: "ficcao",
+        generoNome: "Ficção Científica",
+        sinopse: "Jake Sully e sua família enfrentam novas ameaças enquanto buscam refúgio entre os povos dos oceanos de Pandora para proteger o que restou de seu lar.",
         classificacao: "12",
-        nota: "7.0",
-        capa: "https://image.tmdb.org/t/p/w500/39hN9Zfefb52yHee7WfWb2WpWms.jpg",
-        trailerId: "aeVkbNka9HM"
+        nota: "7.6",
+        capa: "https://upload.wikimedia.org/wikipedia/en/5/54/Avatar_The_Way_of_Water_poster.jpg",
+        trailerId: "d9MyW72ELq0"
     },
     {
         id: 9,
-        titulo: "De Volta para o Futuro",
-        genero: "anos80",
-        generoNome: "Anos 80 / Sci-Fi",
-        sinopse: "Um jovem viaja no tempo usando um DeLorean modificado por um cientista excêntrico.",
-        classificacao: "L",
-        nota: "8.5",
-        capa: "https://image.tmdb.org/t/p/w500/296bF28eCjhj9sK0505pX4P31.jpg",
-        trailerId: "qvsgGtivCgs"
+        titulo: "Bohemian Rhapsody",
+        genero: "vidareal",
+        generoNome: "Vida Real",
+        sinopse: "A trajetória de Freddie Mercury e do Queen, da formação da banda ao histórico show no Live Aid, mostrando os bastidores de uma das carreiras mais icônicas do rock.",
+        classificacao: "14",
+        nota: "7.9",
+        capa: "https://upload.wikimedia.org/wikipedia/en/2/2e/Bohemian_Rhapsody_poster.png",
+        trailerId: "mP0VHJYFOAU"
     },
     {
         id: 10,
-        titulo: "O Exterminador do Futuro",
-        genero: "anos80",
-        generoNome: "Anos 80 / Ação",
-        sinopse: "Um ciborgue é enviado do futuro para assassinar a mãe do futuro líder da resistência humanitária.",
-        classificacao: "14",
+        titulo: "A Rede Social",
+        genero: "vidareal",
+        generoNome: "Vida Real",
+        sinopse: "A história real da criação do Facebook por Mark Zuckerberg em Harvard, e os conflitos e processos judiciais que surgiram junto com o sucesso da rede social.",
+        classificacao: "12",
+        nota: "7.7",
+        capa: "https://upload.wikimedia.org/wikipedia/en/8/8c/The_Social_Network_film_poster.png",
+        trailerId: "lB95KLmpLR4"
+    },
+    {
+        id: 11,
+        titulo: "Oppenheimer",
+        genero: "vidareal",
+        generoNome: "Vida Real",
+        sinopse: "A história do físico J. Robert Oppenheimer e de seu papel no desenvolvimento da bomba atômica durante o Projeto Manhattan, e o peso moral que carregou depois.",
+        classificacao: "16",
+        nota: "8.3",
+        capa: "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
+        trailerId: "uYPbbksJxIg"
+    },
+    {
+        id: 12,
+        titulo: "Prenda-me Se For Capaz",
+        genero: "vidareal",
+        generoNome: "Vida Real",
+        sinopse: "Baseado em fatos reais, acompanha Frank Abagnale Jr., um dos falsificadores mais talentosos da história, e o agente do FBI obcecado em capturá-lo.",
+        classificacao: "12",
         nota: "8.1",
-        capa: "https://image.tmdb.org/t/p/w500/q8q2n3Xj9z5k8KjL18N27s4.jpg",
-        trailerId: "k64P4l2W2pM"
+        capa: "https://upload.wikimedia.org/wikipedia/en/4/4d/Catch_Me_If_You_Can_2002_movie.jpg",
+        trailerId: "TdAKzpZ23w4"
+    },
+    {
+        id: 13,
+        titulo: "La La Land",
+        genero: "romance",
+        generoNome: "Romance",
+        sinopse: "Uma atriz em início de carreira e um pianista de jazz se apaixonam em Los Angeles, enquanto tentam equilibrar seus sonhos profissionais e o amor entre os dois.",
+        classificacao: "L",
+        nota: "8.0",
+        capa: "https://upload.wikimedia.org/wikipedia/en/a/ab/La_La_Land_%28film%29.png",
+        trailerId: "0pdqf4P9MB8"
+    },
+    {
+        id: 14,
+        titulo: "Diário de uma Paixão",
+        genero: "romance",
+        generoNome: "Romance",
+        sinopse: "Um casal de jovens apaixonados é separado pela diferença de classe social e pela guerra, mas o amor que viveram décadas antes ainda ecoa em suas vidas.",
+        classificacao: "14",
+        nota: "7.8",
+        capa: "https://upload.wikimedia.org/wikipedia/en/8/86/Posternotebook.jpg",
+        trailerId: "BjJcYdEOI0k"
+    },
+    {
+        id: 15,
+        titulo: "Titanic",
+        genero: "romance",
+        generoNome: "Romance",
+        sinopse: "A bordo do transatlântico mais famoso da história, uma jovem da alta sociedade e um artista pobre vivem um romance intenso que é interrompido pela tragédia do naufrágio.",
+        classificacao: "12",
+        nota: "7.9",
+        capa: "https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png",
+        trailerId: "2e-eXJ6HgkQ"
+    },
+    {
+        id: 16,
+        titulo: "Como Eu Era Antes de Você",
+        genero: "romance",
+        generoNome: "Romance",
+        sinopse: "Uma jovem sem rumo na vida é contratada para cuidar de um homem que ficou tetraplégico após um acidente, e os dois acabam transformando a visão um do outro sobre a vida.",
+        classificacao: "14",
+        nota: "7.5",
+        capa: "https://upload.wikimedia.org/wikipedia/en/f/fd/Me_Before_You_%28film%29.jpg",
+        trailerId: "Eh993__rOxA"
+    },
+    {
+        id: 17,
+        titulo: "O Diabo Veste Prada",
+        genero: "comedia",
+        generoNome: "Comédia",
+        sinopse: "Uma recém-formada consegue emprego como assistente da temida editora-chefe de uma revista de moda e precisa sobreviver às exigências absurdas do mundo fashion.",
+        classificacao: "12",
+        nota: "7.6",
+        capa: "https://upload.wikimedia.org/wikipedia/en/e/e7/The_Devil_Wears_Prada_main_onesheet.jpg",
+        trailerId: "R8nH9qKXdBY"
+    },
+    {
+        id: 18,
+        titulo: "As Branquelas",
+        genero: "comedia",
+        generoNome: "Comédia",
+        sinopse: "Dois agentes do FBI precisam se disfarçar como duas socialites para protegê-las de um sequestro e acabam vivendo situações cada vez mais hilárias.",
+        classificacao: "12",
+        nota: "6.0",
+        capa: "https://upload.wikimedia.org/wikipedia/en/2/2b/White_chicks.jpg",
+        trailerId: "aeVkbNka9HM"
+    },
+    {
+        id: 19,
+        titulo: "Se Beber, Não Case!",
+        genero: "comedia",
+        generoNome: "Comédia",
+        sinopse: "Depois de uma despedida de solteiro em Las Vegas, três amigos acordam sem lembrar de nada e descobrem que o noivo sumiu, tendo poucas horas para encontrá-lo antes do casamento.",
+        classificacao: "16",
+        nota: "7.7",
+        capa: "https://upload.wikimedia.org/wikipedia/en/b/b9/Hangoverposter09.jpg",
+        trailerId: "dB2jElYbTIo"
+    },
+    {
+        id: 20,
+        titulo: "Guardiões da Galáxia Vol. 3",
+        genero: "pop",
+        generoNome: "Pop",
+        sinopse: "Peter Quill ainda sofre com a perda de Gamora e precisa reunir sua equipe para uma missão perigosa que pode significar o fim dos Guardiões caso não seja bem-sucedida.",
+        classificacao: "12",
+        nota: "7.9",
+        capa: "https://upload.wikimedia.org/wikipedia/en/7/74/Guardians_of_the_Galaxy_Vol._3_poster.jpg",
+        trailerId: "28AuL3OHfuc"
+    },
+    {
+        id: 21,
+        titulo: "Invictus",
+        genero: "vidareal",
+        generoNome: "Vida Real",
+        sinopse: "Baseado em fatos reais, mostra como Nelson Mandela usa a Copa do Mundo de rúgbi de 1995 para unir a África do Sul pós-apartheid em torno de um único objetivo.",
+        classificacao: "12",
+        nota: "7.3",
+        capa: "https://upload.wikimedia.org/wikipedia/en/0/05/Invictus-poster.png",
+        trailerId: "EchyFyRETzc"
+    },
+    {
+        id: 22,
+        titulo: "Simplesmente Amor",
+        genero: "romance",
+        generoNome: "Romance",
+        sinopse: "Diversas histórias de amor se entrelaçam em Londres durante o período do Natal, mostrando diferentes faces do amor entre amigos, casais e famílias.",
+        classificacao: "14",
+        nota: "7.6",
+        capa: "https://upload.wikimedia.org/wikipedia/en/e/eb/Love_Actually_movie.jpg",
+        trailerId: "hJ-_H62To4A"
+    },
+    {
+        id: 23,
+        titulo: "Seu Nome",
+        genero: "anime",
+        generoNome: "Anime",
+        sinopse: "Um garoto e uma garota que nunca se conheceram começam a trocar de corpo misteriosamente, e precisam descobrir a ligação entre eles antes que seja tarde demais.",
+        classificacao: "L",
+        nota: "8.4",
+        capa: "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png",
+        trailerId: "0T6PBmyExMk"
+    },
+    {
+        id: 24,
+        titulo: "Demon Slayer: Mugen Train",
+        genero: "anime",
+        generoNome: "Anime",
+        sinopse: "Tanjiro e seus companheiros embarcam no Trem Infinito para investigar desaparecimentos misteriosos e enfrentam um dos demônios mais poderosos já vistos.",
+        classificacao: "14",
+        nota: "8.2",
+        capa: "https://upload.wikimedia.org/wikipedia/en/2/21/Kimetsu_no_Yaiba_Mugen_Ressha_Hen_Poster.jpg",
+        trailerId: "ATJYac_dORw"
+    },
+    {
+        id: 25,
+        titulo: "Jujutsu Kaisen 0",
+        genero: "anime",
+        generoNome: "Anime",
+        sinopse: "Yuta Okkotsu é assombrado por uma amiga de infância transformada em uma maldição poderosa e precisa aprender a controlar seus poderes na Escola Técnica de Feitiçaria de Jujutsu.",
+        classificacao: "14",
+        nota: "7.6",
+        capa: "https://upload.wikimedia.org/wikipedia/en/4/46/Jujutsu_Kaisen_0_Cover.png",
+        trailerId: "8QkHWlrHqlE"
+    },
+    {
+        id: 26,
+        titulo: "A Viagem de Chihiro",
+        genero: "anime",
+        generoNome: "Anime",
+        sinopse: "Uma garota se muda com a família e acaba presa em um mundo espiritual repleto de deuses e monstros, onde precisa trabalhar em uma casa de banhos mágica para salvar seus pais.",
+        classificacao: "L",
+        nota: "8.5",
+        capa: "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png",
+        trailerId: "L5SjMRioGEk"
+    },
+    {
+        id: 27,
+        titulo: "One Piece Film: Red",
+        genero: "anime",
+        generoNome: "Anime",
+        sinopse: "Uta, a cantora mais amada do mundo e filha secreta de Shanks, revela sua identidade em um grande show, e Luffy e os Chapéus de Palha se veem em meio a segredos perigosos do passado dela.",
+        classificacao: "12",
+        nota: "7.4",
+        capa: "https://upload.wikimedia.org/wikipedia/en/4/44/One_Piece_Film_Red_Visual_Poster.jpg",
+        trailerId: "eU0i7L3cakI"
+    },
+    {
+        id: 28,
+        titulo: "My Hero Academia: You're Next",
+        genero: "anime",
+        generoNome: "Anime",
+        sinopse: "No filme mais recente da franquia, Deku e seus colegas de Yuei enfrentam um vilão que ataca diretamente a essência do que significa ser um herói, em uma das maiores batalhas da série.",
+        classificacao: "12",
+        nota: "7.5",
+        capa: "https://upload.wikimedia.org/wikipedia/en/1/13/My_Hero_Academia_-_You%27re_Next.png",
+        trailerId: "HzSVqFy7NsQ",
+        destaque: true
     }
 ];
+
+// Ícone e cores de fallback exibidos enquanto o pôster real carrega (ou se falhar)
+const POSTER_FALLBACK = {
+    pop: { icone: "🎬", corA: "#3a0d10", corB: "#0c0c12" },
+    ficcao: { icone: "🚀", corA: "#0d1f3a", corB: "#05070c" },
+    vidareal: { icone: "🎭", corA: "#3a2a0d", corB: "#0c0c12" },
+    romance: { icone: "💕", corA: "#3a0d2a", corB: "#0c0c12" },
+    comedia: { icone: "😂", corA: "#0d3a1f", corB: "#0c0c12" },
+    anime: { icone: "🍥", corA: "#3a1a0d", corB: "#0c0c12" }
+};
 
 // SVG padrão de fallback para impedir imagem quebrada
 const PLACEHOLDER_IMG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='50%' font-family='sans-serif' font-size='30' fill='%239ca3af' text-anchor='middle'>🎬 Sem Imagem</text></svg>";
@@ -160,9 +369,16 @@ function criarCard(filme) {
     card.className = "movie-card";
     card.dataset.id = filme.id;
 
+    const fallback = POSTER_FALLBACK[filme.genero] || POSTER_FALLBACK.pop;
+
     card.innerHTML = `
         <div class="movie-poster">
-            <img src="${filme.capa}" alt="Poster de ${filme.titulo}" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">
+            <div class="poster-art" style="--poster-a:${fallback.corA};--poster-b:${fallback.corB};">
+                <span class="poster-icon">${fallback.icone}</span>
+                <span class="poster-title">${filme.titulo}</span>
+                <span class="poster-caption">${filme.generoNome}</span>
+            </div>
+            <img src="${filme.capa}" alt="Poster de ${filme.titulo}" loading="lazy" onload="this.classList.add('loaded');" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';this.classList.add('loaded');">
             <span class="age-badge age-${filme.classificacao}">${filme.classificacao}</span>
             ${visto ? `<span class="watched-badge">✓ Visto</span>` : ""}
             <div class="movie-overlay">
@@ -185,6 +401,35 @@ function criarCard(filme) {
     `;
 
     return card;
+}
+
+// Exibe o filme marcado como "destaque" (ex.: o mais recente lançamento premiado) em um banner especial
+function renderizarDestaque() {
+    const secao = document.getElementById("destaque-section");
+    if (!secao) return;
+
+    const destaque = filmes.find(filme => filme.destaque);
+    if (!destaque) return;
+
+    secao.innerHTML = `
+        <div class="destaque-content">
+            <div class="destaque-poster">
+                <img src="${destaque.capa}" alt="Pôster de ${destaque.titulo}" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">
+            </div>
+            <div class="destaque-info">
+                <span class="destaque-selo">🏆 Top Filme Premiado</span>
+                <h2>${destaque.titulo}</h2>
+                <p>${destaque.sinopse}</p>
+                <div class="destaque-meta">
+                    <span class="movie-rating">⭐ ${destaque.nota}</span>
+                    <span>${destaque.generoNome}</span>
+                    <span>Classificação: ${destaque.classificacao}</span>
+                </div>
+                <button type="button" class="destaque-btn" data-details="${destaque.id}">▶ Ver detalhes e comprar</button>
+            </div>
+        </div>
+    `;
+    secao.hidden = false;
 }
 
 function renderizarFilmes(lista) {
@@ -239,6 +484,14 @@ function abrirModal(id) {
     if (trailer) trailer.src = `https://www.youtube.com/embed/${filme.trailerId}?autoplay=1&rel=0`;
 
     atualizarBotoes();
+
+    // Reinicia a seleção de sessão para o filme recém-aberto e gera assentos próprios dele
+    diaAtual = "02/09/2026";
+    document.querySelectorAll(".btn-dia").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.data === diaAtual);
+    });
+    carregarHorarios(diaAtual);
+
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -311,7 +564,10 @@ function alternarDislike() {
 }
 
 function alternarContraste() {
-    document.body.classList.toggle("high-contrast");
+    const ativo = document.body.classList.toggle("high-contrast");
+    const btn = document.getElementById("btn-contraste");
+    if (btn) btn.setAttribute("aria-pressed", ativo);
+    localStorage.setItem("popcorn_contraste", ativo ? "1" : "0");
 }
 
 document.addEventListener("click", function (e) {
@@ -341,8 +597,24 @@ document.addEventListener("DOMContentLoaded", function () {
     if (searchInput) {
         searchInput.addEventListener("input", atualizarCatalogo);
     }
+
+    const btnContraste = document.getElementById("btn-contraste");
+    if (btnContraste) {
+        btnContraste.addEventListener("click", alternarContraste);
+        if (localStorage.getItem("popcorn_contraste") === "1") {
+            document.body.classList.add("high-contrast");
+            btnContraste.setAttribute("aria-pressed", "true");
+        }
+    }
+
+    if (favoriteBtn) favoriteBtn.addEventListener("click", () => alternarFavorito());
+    if (watchedBtn) watchedBtn.addEventListener("click", alternarVisto);
+    if (likeBtn) likeBtn.addEventListener("click", alternarLike);
+    if (dislikeBtn) dislikeBtn.addEventListener("click", alternarDislike);
+
     atualizarCatalogo();
     renderizarFavoritos();
+    renderizarDestaque();
 });
 
 // Preço fixo por ingresso
@@ -393,32 +665,48 @@ function carregarHorarios(dia) {
     carregarAssentos();
 }
 
-// Gera o mapa de assentos (com assentos ocupados simulados)
+// Gerador pseudo-aleatório com semente fixa: mesmo filme/sessão sempre
+// mostra o mesmo mapa de ocupação, mas cada filme fica diferente dos outros.
+function criarGeradorComSemente(semente) {
+    let s = semente % 2147483647;
+    if (s <= 0) s += 2147483646;
+    return function () {
+        s = (s * 16807) % 2147483647;
+        return (s - 1) / 2147483646;
+    };
+}
+
+// Gera o mapa de assentos: ocupação varia de acordo com o filme e a sessão escolhida
 function carregarAssentos(totalAssentos = 32) {
     const grid = document.getElementById('assentos-grid');
     grid.innerHTML = '';
     assentosSelecionados = 0;
     atualizarResumo();
 
+    const diaNumero = Number(diaAtual.replace(/\D/g, '')) || 0;
+    const horaNumero = Number(horaAtual.replace(':', '')) || 0;
+    const semente = filmeAtual ? (filmeAtual.id * 977) + diaNumero + horaNumero : 12345;
+    const aleatorio = criarGeradorComSemente(semente);
+
     for (let i = 1; i <= totalAssentos; i++) {
         const assento = document.createElement('div');
         assento.classList.add('assento');
-        
-        // Simulação de assentos ocupados aleatórios
-        if ((i * 3) % 7 === 0 || i === 5 || i === 12) {
+
+        // Cerca de 35% dos assentos já ocupados, variando por filme/sessão
+        if (aleatorio() < 0.35) {
             assento.classList.add('ocupado');
         }
 
         assento.addEventListener('click', () => {
             if (!assento.classList.contains('ocupado')) {
                 assento.classList.toggle('selecionado');
-                
+
                 if (assento.classList.contains('selecionado')) {
                     assentosSelecionados++;
                 } else {
                     assentosSelecionados--;
                 }
-                
+
                 atualizarResumo();
             }
         });
@@ -457,8 +745,58 @@ document.addEventListener('DOMContentLoaded', () => {
     carregarHorarios(diaAtual);
 });
 
-// Ação ao confirmar reserva
+// Ação ao clicar em "Comprar": fecha o modal de sessão e abre o bilhete de confirmação
 function confirmarReserva() {
-    alert(`Reserva confirmada!\nSessão: ${diaAtual} às ${horaAtual}\nTotal de Assentos: ${assentosSelecionados}\nValor Total: R$ ${document.getElementById('preco-total').innerText}`);
+    if (assentosSelecionados === 0) return;
+
+    const totalTexto = document.getElementById('preco-total').innerText;
+    const sessaoTexto = `${diaAtual} às ${horaAtual}`;
+
+    abrirSucessoModal(sessaoTexto, assentosSelecionados, totalTexto);
+    incrementarTicketsComprados(assentosSelecionados);
     fecharModal();
 }
+
+function abrirSucessoModal(sessaoTexto, qtdAssentos, totalTexto) {
+    const sucessoModal = document.getElementById('sucesso-modal');
+    if (!sucessoModal) return;
+
+    document.getElementById('sucesso-mensagem-sessao').textContent =
+        `${filmeAtual ? filmeAtual.titulo + ' — ' : ''}Sessão: ${sessaoTexto}`;
+    document.getElementById('sucesso-mensagem-assentos').textContent =
+        `Assentos comprados: ${qtdAssentos}`;
+    document.getElementById('sucesso-mensagem-total').textContent = `R$ ${totalTexto}`;
+
+    sucessoModal.classList.add('active');
+}
+
+function fecharSucessoModal() {
+    const sucessoModal = document.getElementById('sucesso-modal');
+    if (!sucessoModal) return;
+    sucessoModal.classList.remove('active');
+}
+
+// Badge "Assento comprado" perto do botão "Explorar filmes", com contador salvo no navegador
+function incrementarTicketsComprados(quantidade) {
+    const total = (Number(localStorage.getItem('popcorn_tickets_comprados')) || 0) + quantidade;
+    localStorage.setItem('popcorn_tickets_comprados', String(total));
+    mostrarBadgeCompra(total);
+}
+
+function mostrarBadgeCompra(total) {
+    const badge = document.getElementById('compra-badge');
+    const texto = document.getElementById('compra-badge-texto');
+    if (!badge || !texto) return;
+
+    texto.textContent = total === 1 ? 'Assento comprado!' : `${total} assentos comprados!`;
+    badge.hidden = false;
+
+    badge.classList.remove('compra-badge-pop');
+    void badge.offsetWidth; // reinicia a animação a cada nova compra
+    badge.classList.add('compra-badge-pop');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const totalSalvo = Number(localStorage.getItem('popcorn_tickets_comprados')) || 0;
+    if (totalSalvo > 0) mostrarBadgeCompra(totalSalvo);
+});

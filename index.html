@@ -16,19 +16,20 @@
                 <input type="text" id="movie-search" placeholder="Buscar filmes...">
             </form>
 
-            <button id="btn-contraste" aria-label="Alternar Alto Contraste">
-                Acessibilidade (Alto Contraste)
+            <button id="btn-contraste" class="btn-contraste" aria-pressed="false" aria-label="Alternar Alto Contraste">
+                ◐ Acessibilidade (Alto Contraste)
             </button>
         </div>
 
         <!-- Filtros por Categoria -->
         <div class="genre-filters">
             <button class="genre-btn active" data-genre="all">Todos</button>
-            <button class="genre-btn" data-genre="action">Ação</button>
-            <button class="genre-btn" data-genre="comedy">Comédia</button>
-            <button class="genre-btn" data-genre="drama">Drama</button>
-            <button class="genre-btn" data-genre="sci-fi">Sci-Fi</button>
-            <button class="genre-btn" data-genre="anos80">Anos 80</button>
+            <button class="genre-btn" data-genre="pop">🎬 Pop</button>
+            <button class="genre-btn" data-genre="ficcao">🚀 Ficção Científica</button>
+            <button class="genre-btn" data-genre="vidareal">🎭 Vida Real</button>
+            <button class="genre-btn" data-genre="romance">💕 Romance</button>
+            <button class="genre-btn" data-genre="comedia">😂 Comédia</button>
+            <button class="genre-btn" data-genre="anime">🍥 Anime</button>
         </div>
     </header>
 
@@ -37,9 +38,15 @@
             <span class="hero-badge">POPCORN HUB</span>
             <h2>O melhor do cinema em um só lugar</h2>
             <p>Descubra novos filmes, confira trailers, avalie seus favoritos e monte sua própria coleção cinematográfica.</p>
-            <a href="#catalogo" class="hero-btn">Explorar filmes</a>
+            <div class="hero-actions">
+                <a href="#catalogo" class="hero-btn">Explorar filmes</a>
+                <span id="compra-badge" class="compra-badge" hidden>🎟️ <span id="compra-badge-texto">Assento comprado!</span></span>
+            </div>
         </div>
     </section>
+
+    <!-- Destaque especial: preenchido dinamicamente via JS (ver renderizarDestaque em script.js) -->
+    <section id="destaque-section" class="destaque-section" hidden></section>
 
     <main id="catalogo">
         <section class="movies-section">
@@ -59,7 +66,7 @@
     </main>
 
     <!-- Modal Principal de Compra e Trailer -->
-    <div id="movie-modal" class="modal" aria-hidden="true" style="display: none;">
+    <div id="movie-modal" class="modal" aria-hidden="true">
         <div class="modal-box">
             <button class="modal-close" onclick="fecharModal()">&times;</button>
             
@@ -79,19 +86,13 @@
                     <p id="modal-synopsis"></p>
                 </div>
 
-                <div class="movie-actions">
-                    <button id="favorite-btn" class="action-btn">❤️ Favorito</button>
-                    <button id="watched-btn" class="action-btn">👁️ Visto</button>
-                    <button id="like-btn" class="action-btn">👍 Gostei</button>
-                    <button id="dislike-btn" class="action-btn">👎 Não Gostei</button>
-                </div>
-
                 <hr class="modal-divider">
 
                 <!-- Seção de Ingressos -->
                 <div class="sessao-container">
                     <h3>🎟️ Comprar Ingresso - Sessões de Setembro / 2026</h3>
-                    
+                    <p class="preco-regra">Cada assento custa <strong>R$ 25,00</strong>.</p>
+
                     <p class="sessao-label">Selecione a Data:</p>
                     <div class="dias-list">
                         <button class="btn-dia active" data-data="02/09/2026">Qua - 02/09</button>
@@ -119,7 +120,19 @@
                         <p>Sessão: <strong id="sessao-selecionada-texto">02/09/2026 às 13:00</strong></p>
                         <p>Assentos Selecionados: <strong id="assentos-qtd">0</strong></p>
                         <p class="preco-destaque">Total: R$ <span id="preco-total">0,00</span></p>
-                        <button id="btn-confirmar" class="btn-confirmar" disabled onclick="confirmarReserva()">Confirmar Reserva</button>
+                        <button id="btn-confirmar" class="btn-confirmar" disabled onclick="confirmarReserva()">🎟️ Comprar</button>
+                    </div>
+                </div>
+
+                <hr class="modal-divider">
+
+                <div class="movie-actions">
+                    <p class="sessao-label movie-actions-label">O que você achou desse filme?</p>
+                    <div class="movie-actions-buttons">
+                        <button id="favorite-btn" class="action-btn">❤️ Favorito</button>
+                        <button id="watched-btn" class="action-btn">👁️ Visto</button>
+                        <button id="like-btn" class="action-btn">👍 Gostei</button>
+                        <button id="dislike-btn" class="action-btn">👎 Não Gostei</button>
                     </div>
                 </div>
             </div>
@@ -127,7 +140,7 @@
     </div>
 
     <!-- Modal de Sucesso na Reserva -->
-    <div id="sucesso-modal" class="modal-sucesso-overlay" style="display: none;">
+    <div id="sucesso-modal" class="modal-sucesso-overlay">
         <div class="modal-sucesso-content">
             <div class="sucesso-icon">🎉</div>
             <h2>Reserva Confirmada!</h2>
