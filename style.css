@@ -426,6 +426,10 @@ body.high-contrast button {
     flex-wrap: wrap;
 }
 
+.compra-wrapper {
+    position: relative;
+}
+
 /* Selo "assento comprado" exibido perto do botão Explorar filmes */
 .compra-badge {
     display: inline-flex;
@@ -438,6 +442,13 @@ body.high-contrast button {
     color: #ffd7d7;
     font-weight: 700;
     font-size: 0.9rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.compra-badge:hover {
+    background: rgba(229, 9, 20, 0.28);
 }
 
 .compra-badge[hidden] {
@@ -454,50 +465,115 @@ body.high-contrast button {
     animation: badgePop 0.35s ease;
 }
 
+/* Prévia (dropdown) com os filmes cujos ingressos já foram comprados.
+   position:fixed (com posição calculada via JS) para não ser cortada pelo
+   overflow:hidden do .hero-banner, que fica em volta do selo de compra. */
+.compra-preview {
+    position: fixed;
+    z-index: 200;
+    width: min(300px, 82vw);
+    max-height: 320px;
+    overflow-y: auto;
+    background: #141414;
+    border: 1px solid rgba(229, 9, 20, 0.4);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.compra-preview[hidden] {
+    display: none;
+}
+
+.compra-preview-titulo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.icone-ticket {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.compra-preview-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.compra-preview-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.compra-preview-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.compra-preview-poster {
+    flex-shrink: 0;
+    width: 40px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    background: #000;
+}
+
+.compra-preview-info {
+    min-width: 0;
+}
+
+.compra-preview-info strong {
+    display: block;
+    font-size: 0.88rem;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.compra-preview-info span {
+    display: block;
+    font-size: 0.76rem;
+    color: var(--muted);
+}
+
+.compra-preview-vazio {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
 /* =========================================================
-   DESTAQUE ESPECIAL (filme premiado em evidência)
+   DESTAQUE ESPECIAL (esteira com os filmes mais premiados)
    ========================================================= */
 
 .destaque-section {
-    width: min(1400px, 94%);
-    margin: 45px auto 0;
+    width: 100%;
+    margin: 45px 0 0;
+    padding: 28px 0 32px;
+    background: linear-gradient(180deg, rgba(229, 9, 20, 0.08), transparent);
+    border-top: 1px solid rgba(229, 9, 20, 0.25);
+    border-bottom: 1px solid rgba(229, 9, 20, 0.25);
 }
 
 .destaque-section[hidden] {
     display: none;
 }
 
-.destaque-content {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-    background:
-        linear-gradient(120deg, rgba(229, 9, 20, 0.14), rgba(0, 0, 0, 0.5)),
-        var(--card);
-    border: 1px solid rgba(229, 9, 20, 0.4);
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
-}
-
-.destaque-poster {
-    flex: 0 0 180px;
-    aspect-ratio: 2 / 3;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-}
-
-.destaque-poster img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.destaque-info {
-    flex: 1;
-    min-width: 0;
+.destaque-header {
+    width: min(1400px, 94%);
+    margin: 0 auto 18px;
 }
 
 .destaque-selo {
@@ -505,69 +581,81 @@ body.high-contrast button {
     background: var(--red);
     color: white;
     font-weight: 800;
-    padding: 6px 14px;
+    padding: 8px 18px;
     border-radius: 999px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     letter-spacing: 0.5px;
-    margin-bottom: 12px;
 }
 
-.destaque-info h2 {
-    font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    line-height: 1;
-    margin-bottom: 12px;
+/* A esteira ocupa a largura toda; a máscara nas bordas suaviza a entrada/saída dos cards */
+.destaque-esteira {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+    mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
 }
 
-.destaque-info p {
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 14px;
-    max-width: 700px;
-}
-
-.destaque-meta {
+.destaque-trilha {
     display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-bottom: 18px;
+    gap: 18px;
+    width: max-content;
+    padding: 0 18px;
+    animation: destaqueRolagem 40s linear infinite;
 }
 
-.destaque-btn {
-    border: 0;
-    border-radius: 8px;
-    padding: 12px 20px;
-    background: var(--red);
-    color: white;
-    font-weight: 800;
+.destaque-esteira:hover .destaque-trilha {
+    animation-play-state: paused;
+}
+
+@keyframes destaqueRolagem {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.destaque-card {
+    flex: 0 0 150px;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
     cursor: pointer;
-    transition: 0.2s ease;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+    padding: 0;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.destaque-btn:hover {
-    background: #ff1823;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.45);
+.destaque-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--red);
 }
 
-@media (max-width: 800px) {
-    .destaque-content {
-        flex-direction: column;
-        text-align: center;
-    }
+.destaque-card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+}
 
-    .destaque-meta {
-        justify-content: center;
-    }
+.destaque-card-info {
+    padding: 10px;
+}
 
-    .destaque-info p {
-        margin-left: auto;
-        margin-right: auto;
-    }
+.destaque-card-info strong {
+    display: block;
+    font-size: 0.82rem;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.destaque-card-info span {
+    font-size: 0.72rem;
+    color: var(--muted);
 }
 
 /* =========================================================
@@ -1093,6 +1181,60 @@ main {
 }
 
 /* =========================================================
+   EQUIPE (criadores do projeto)
+   ========================================================= */
+
+.equipe-section {
+    width: min(1400px, 94%);
+    margin: 0 auto;
+    padding: 50px 0;
+    border-top: 1px solid var(--border);
+}
+
+.equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.equipe-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.equipe-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(229, 9, 20, 0.5);
+}
+
+.equipe-card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    margin: 0 auto 16px;
+    display: block;
+    border: 3px solid var(--red);
+}
+
+.equipe-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.equipe-card p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* =========================================================
    FOOTER
    ========================================================= */
 
@@ -1441,11 +1583,35 @@ main {
 
 /* Grade de Assentos */
 .assentos-grid {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 8px;
-    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    max-width: 300px;
     margin: 0 auto 20px auto;
+}
+
+/* Cada fileira: rótulo da letra à esquerda + poltronas numeradas, como num cinema real */
+.assentos-linha {
+    display: grid;
+    grid-template-columns: 18px repeat(8, 1fr);
+    gap: 8px;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.assentos-cabecalho {
+    margin-bottom: 2px;
+}
+
+.assento-letra,
+.assento-numero-coluna {
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1;
 }
 
 .assento {

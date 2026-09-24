@@ -30,6 +30,13 @@
             <button class="genre-btn" data-genre="romance">💕 Romance</button>
             <button class="genre-btn" data-genre="comedia">😂 Comédia</button>
             <button class="genre-btn" data-genre="anime">🍥 Anime</button>
+            <button class="genre-btn" data-genre="terror">💀 Terror</button>
+            <button class="genre-btn" data-genre="aventura">🧭 Aventura</button>
+            <button class="genre-btn" data-genre="suspense">🕵️ Suspense</button>
+            <button class="genre-btn" data-genre="infantil">🧸 Infantil</button>
+            <button class="genre-btn" data-genre="fantasia">🧙 Fantasia</button>
+            <button class="genre-btn" data-genre="drama">🎭 Drama</button>
+            <button class="genre-btn" data-genre="animacao">🎨 Animação</button>
         </div>
     </header>
 
@@ -40,13 +47,36 @@
             <p>Descubra novos filmes, confira trailers, avalie seus favoritos e monte sua própria coleção cinematográfica.</p>
             <div class="hero-actions">
                 <a href="#catalogo" class="hero-btn">Explorar filmes</a>
-                <span id="compra-badge" class="compra-badge" hidden>🎟️ <span id="compra-badge-texto">Assento comprado!</span></span>
+                <div class="compra-wrapper">
+                    <button type="button" id="compra-badge" class="compra-badge" hidden aria-expanded="false" aria-haspopup="true">
+                        <svg class="icone-ticket" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2.5a1.75 1.75 0 0 0 0 3.5V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3a1.75 1.75 0 0 0 0-3.5V7zm7-1v2h1V6h-1zm0 4v2h1v-2h-1zm0 4v2h1v-2h-1z"/>
+                        </svg>
+                        <span id="compra-badge-texto">Assento comprado!</span>
+                    </button>
+                    <div id="compra-preview" class="compra-preview" hidden role="dialog" aria-label="Prévia dos ingressos comprados">
+                        <p class="compra-preview-titulo">
+                            <svg class="icone-ticket" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2.5a1.75 1.75 0 0 0 0 3.5V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3a1.75 1.75 0 0 0 0-3.5V7zm7-1v2h1V6h-1zm0 4v2h1v-2h-1zm0 4v2h1v-2h-1z"/>
+                            </svg>
+                            Seus ingressos
+                        </p>
+                        <ul id="compra-preview-lista" class="compra-preview-lista"></ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Destaque especial: preenchido dinamicamente via JS (ver renderizarDestaque em script.js) -->
-    <section id="destaque-section" class="destaque-section" hidden></section>
+    <!-- Destaque especial: esteira com os filmes marcados como "destaque" em script.js (ver renderizarDestaque) -->
+    <section id="destaque-section" class="destaque-section" hidden>
+        <div class="destaque-header">
+            <span class="destaque-selo">🏆 Top Filmes Premiados</span>
+        </div>
+        <div class="destaque-esteira">
+            <div id="destaque-trilha" class="destaque-trilha"></div>
+        </div>
+    </section>
 
     <main id="catalogo">
         <section class="movies-section">
@@ -153,6 +183,29 @@
             <button class="btn-fechar-sucesso" onclick="fecharSucessoModal()">Excelente!</button>
         </div>
     </div>
+
+    <section class="equipe-section">
+        <div class="section-header">
+            <h2>Quem fez o Popcorn Hub</h2>
+        </div>
+        <div class="equipe-grid">
+            <article class="equipe-card">
+                <img src="img/equipe/pablo.png" alt="Foto de Pablo-Chan Mota de Oliveira" loading="lazy">
+                <h3>Pablo-Chan Mota de Oliveira</h3>
+                <p>Um dos criadores do Popcorn Hub, cuidou da ideia geral do site e do visual, deixando o catálogo com a cara de um cinema de verdade.</p>
+            </article>
+            <article class="equipe-card">
+                <img src="img/equipe/pastor.png" alt="Foto de Pastor Doctor Bombas Rodrigues" loading="lazy">
+                <h3>Pastor Doctor Bombas Rodrigues</h3>
+                <p>Responsável por boa parte da programação do projeto, ajudando a resolver os bugs e a fazer as funcionalidades do site funcionarem direitinho.</p>
+            </article>
+            <article class="equipe-card">
+                <img src="img/equipe/lua.png" alt="Foto de Luã Ditador Proença" loading="lazy">
+                <h3>Luã Ditador Proença</h3>
+                <p>Cuidou dos testes e da organização do projeto, conferindo cada detalhe do Popcorn Hub antes de ele ficar pronto.</p>
+            </article>
+        </div>
+    </section>
 
     <footer class="site-footer">
         <p><strong>Popcorn Hub</strong> &copy; Todos os direitos reservados.</p>

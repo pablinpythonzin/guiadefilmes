@@ -12,7 +12,8 @@ const filmes = [
         classificacao: "12",
         nota: "8.4",
         capa: "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg",
-        trailerId: "TcMBFSGVi1c"
+        trailerId: "TcMBFSGVi1c",
+        destaque: true
     },
     {
         id: 2,
@@ -56,7 +57,8 @@ const filmes = [
         classificacao: "10",
         nota: "8.7",
         capa: "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-        trailerId: "zSWdZVtXT7E"
+        trailerId: "zSWdZVtXT7E",
+        destaque: true
     },
     {
         id: 6,
@@ -67,7 +69,8 @@ const filmes = [
         classificacao: "12",
         nota: "8.0",
         capa: "https://upload.wikimedia.org/wikipedia/en/8/8e/Dune_%282021_film%29.jpg",
-        trailerId: "8g18jFHCLXk"
+        trailerId: "8g18jFHCLXk",
+        destaque: true
     },
     {
         id: 7,
@@ -78,7 +81,8 @@ const filmes = [
         classificacao: "16",
         nota: "8.7",
         capa: "https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png",
-        trailerId: "vKQi3bBA1y8"
+        trailerId: "vKQi3bBA1y8",
+        destaque: true
     },
     {
         id: 8,
@@ -100,7 +104,8 @@ const filmes = [
         classificacao: "14",
         nota: "7.9",
         capa: "https://upload.wikimedia.org/wikipedia/en/2/2e/Bohemian_Rhapsody_poster.png",
-        trailerId: "mP0VHJYFOAU"
+        trailerId: "mP0VHJYFOAU",
+        destaque: true
     },
     {
         id: 10,
@@ -122,7 +127,8 @@ const filmes = [
         classificacao: "16",
         nota: "8.3",
         capa: "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
-        trailerId: "uYPbbksJxIg"
+        trailerId: "uYPbbksJxIg",
+        destaque: true
     },
     {
         id: 12,
@@ -166,7 +172,8 @@ const filmes = [
         classificacao: "12",
         nota: "7.9",
         capa: "https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png",
-        trailerId: "2e-eXJ6HgkQ"
+        trailerId: "2e-eXJ6HgkQ",
+        destaque: true
     },
     {
         id: 16,
@@ -254,7 +261,8 @@ const filmes = [
         classificacao: "L",
         nota: "8.4",
         capa: "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png",
-        trailerId: "0T6PBmyExMk"
+        trailerId: "0T6PBmyExMk",
+        destaque: true
     },
     {
         id: 24,
@@ -311,6 +319,160 @@ const filmes = [
         capa: "https://upload.wikimedia.org/wikipedia/en/1/13/My_Hero_Academia_-_You%27re_Next.png",
         trailerId: "HzSVqFy7NsQ",
         destaque: true
+    },
+    {
+        id: 29,
+        titulo: "It: A Coisa",
+        genero: "terror",
+        generoNome: "Terror",
+        sinopse: "Um grupo de crianças de uma pequena cidade precisa enfrentar um ser sobrenatural que assume a forma de um palhaço assustador e se alimenta do medo de suas vítimas.",
+        classificacao: "16",
+        nota: "7.3",
+        capa: "https://upload.wikimedia.org/wikipedia/en/5/5a/It_%282017%29_poster.jpg",
+        trailerId: "A4PuQCWDcM4"
+    },
+    {
+        id: 30,
+        titulo: "Invocação do Mal",
+        genero: "terror",
+        generoNome: "Terror",
+        sinopse: "Um casal de investigadores paranormais é chamado para ajudar uma família aterrorizada por uma presença sombria em sua fazenda isolada.",
+        classificacao: "14",
+        nota: "7.5",
+        capa: "https://upload.wikimedia.org/wikipedia/en/8/8c/The_Conjuring_poster.jpg",
+        trailerId: "LPR-z0l8xQo"
+    },
+    {
+        id: 31,
+        titulo: "Piratas do Caribe: A Maldição do Black Pearl",
+        genero: "aventura",
+        generoNome: "Aventura",
+        sinopse: "O excêntrico pirata Jack Sparrow se une a um jovem ferreiro para resgatar a filha do governador, sequestrada pela tripulação amaldiçoada do navio Pérola Negra.",
+        classificacao: "12",
+        nota: "8.0",
+        capa: "https://upload.wikimedia.org/wikipedia/en/8/89/Pirates_of_the_Caribbean_-_The_Curse_of_the_Black_Pearl.png",
+        trailerId: "uEQDmDV7PUs"
+    },
+    {
+        id: 32,
+        titulo: "Indiana Jones e os Caçadores da Arca Perdida",
+        genero: "aventura",
+        generoNome: "Aventura",
+        sinopse: "O arqueólogo aventureiro Indiana Jones corre contra o tempo para encontrar a lendária Arca da Aliança antes que ela caia nas mãos dos nazistas.",
+        classificacao: "12",
+        nota: "8.4",
+        capa: "https://upload.wikimedia.org/wikipedia/en/4/4c/Raiders_of_the_Lost_Ark.jpg",
+        trailerId: "ZQAwr0eOTgM"
+    },
+    {
+        id: 33,
+        titulo: "Corra!",
+        genero: "suspense",
+        generoNome: "Suspense",
+        sinopse: "Um jovem negro visita a família da namorada branca pela primeira vez e aos poucos descobre segredos perturbadores escondidos por trás da hospitalidade da família.",
+        classificacao: "16",
+        nota: "7.7",
+        capa: "https://upload.wikimedia.org/wikipedia/en/a/a3/Get_Out_poster.png",
+        trailerId: "DzfpyUB60YY"
+    },
+    {
+        id: 34,
+        titulo: "Garota Exemplar",
+        genero: "suspense",
+        generoNome: "Suspense",
+        sinopse: "No dia do aniversário de casamento, Nick descobre que sua esposa Amy desapareceu, e conforme a investigação avança, segredos do casamento vêm à tona.",
+        classificacao: "16",
+        nota: "7.9",
+        capa: "https://upload.wikimedia.org/wikipedia/en/0/05/Gone_Girl_Poster.jpg",
+        trailerId: "2-_-1nJf8Vg"
+    },
+    {
+        id: 35,
+        titulo: "Toy Story",
+        genero: "infantil",
+        generoNome: "Infantil",
+        sinopse: "Um cowboy de brinquedo vê sua posição como brinquedo favorito ameaçada pela chegada de um moderno boneco astronauta, e os dois precisam aprender a trabalhar juntos.",
+        classificacao: "L",
+        nota: "8.3",
+        capa: "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
+        trailerId: "7MM1k1SSlWs"
+    },
+    {
+        id: 36,
+        titulo: "Divertida Mente",
+        genero: "infantil",
+        generoNome: "Infantil",
+        sinopse: "Dentro da mente de uma garota que muda de cidade, as emoções Alegria, Tristeza, Raiva, Medo e Nojinho disputam o controle de como ela deve reagir à nova fase da vida.",
+        classificacao: "L",
+        nota: "8.1",
+        capa: "https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg",
+        trailerId: "WIDYqBMFzfg"
+    },
+    {
+        id: 37,
+        titulo: "As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa",
+        genero: "fantasia",
+        generoNome: "Fantasia",
+        sinopse: "Quatro irmãos descobrem um mundo mágico escondido dentro de um guarda-roupa e se veem no meio de uma batalha para libertar Nárnia do domínio eterno do inverno.",
+        classificacao: "L",
+        nota: "6.9",
+        capa: "https://upload.wikimedia.org/wikipedia/en/1/10/The_Chronicles_of_Narnia_-_The_Lion%2C_the_Witch_and_the_Wardrobe.jpg",
+        trailerId: "cNuoUKDbX_4"
+    },
+    {
+        id: 38,
+        titulo: "O Senhor dos Anéis: A Sociedade do Anel",
+        genero: "fantasia",
+        generoNome: "Fantasia",
+        sinopse: "Um hobbit recebe a missão de destruir um anel amaldiçoado capaz de dar poder absoluto ao Senhor do Escuro, e para isso forma uma sociedade com guerreiros de diferentes povos.",
+        classificacao: "12",
+        nota: "8.8",
+        capa: "https://upload.wikimedia.org/wikipedia/en/f/fb/Lord_Rings_Fellowship_Ring.jpg",
+        trailerId: "SXpTDVcO0dI"
+    },
+    {
+        id: 39,
+        titulo: "Forrest Gump",
+        genero: "drama",
+        generoNome: "Drama",
+        sinopse: "Um homem simples e de bom coração narra como, sem querer, participou de alguns dos momentos mais importantes da história americana ao longo de décadas.",
+        classificacao: "12",
+        nota: "8.8",
+        capa: "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
+        trailerId: "E4JMfZNswzY"
+    },
+    {
+        id: 40,
+        titulo: "O Poderoso Chefão",
+        genero: "drama",
+        generoNome: "Drama",
+        sinopse: "A saga da família Corleone mostra a transição de poder dentro de uma das mais poderosas famílias da máfia americana e o legado que ela deixa para as próximas gerações.",
+        classificacao: "14",
+        nota: "9.2",
+        capa: "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
+        trailerId: "AWj8yr3wAX0"
+    },
+    {
+        id: 41,
+        titulo: "Shrek",
+        genero: "animacao",
+        generoNome: "Animação",
+        sinopse: "Um ogro rabugento precisa resgatar uma princesa para reaver seu pântano, e acaba embarcando em uma jornada ao lado de um burro falante que não para de falar.",
+        classificacao: "L",
+        nota: "7.9",
+        capa: "https://upload.wikimedia.org/wikipedia/en/7/7b/Shrek_%282001_animated_feature_film%29.jpg",
+        trailerId: "ooJJX3R42WM"
+    },
+    {
+        id: 42,
+        titulo: "Up: Altas Aventuras",
+        genero: "animacao",
+        generoNome: "Animação",
+        sinopse: "Um viúvo de 78 anos amarra milhares de balões em sua casa para realizar o sonho de viajar à América do Sul, e acaba levando um garoto escoteiro como companheiro de bordo sem querer.",
+        classificacao: "L",
+        nota: "8.2",
+        capa: "https://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg",
+        trailerId: "qas5lWp7_R0"
     }
 ];
 
@@ -321,7 +483,14 @@ const POSTER_FALLBACK = {
     vidareal: { icone: "🎭", corA: "#3a2a0d", corB: "#0c0c12" },
     romance: { icone: "💕", corA: "#3a0d2a", corB: "#0c0c12" },
     comedia: { icone: "😂", corA: "#0d3a1f", corB: "#0c0c12" },
-    anime: { icone: "🍥", corA: "#3a1a0d", corB: "#0c0c12" }
+    anime: { icone: "🍥", corA: "#3a1a0d", corB: "#0c0c12" },
+    terror: { icone: "💀", corA: "#1a0d0d", corB: "#000000" },
+    aventura: { icone: "🧭", corA: "#1a2a0d", corB: "#0c0c12" },
+    suspense: { icone: "🕵️", corA: "#0d0d1a", corB: "#000000" },
+    infantil: { icone: "🧸", corA: "#1a0d2a", corB: "#0c0c12" },
+    fantasia: { icone: "🧙", corA: "#0d2a1a", corB: "#0c0c12" },
+    drama: { icone: "🎭", corA: "#2a0d1a", corB: "#0c0c12" },
+    animacao: { icone: "🎨", corA: "#2a1a0d", corB: "#0c0c12" }
 };
 
 // SVG padrão de fallback para impedir imagem quebrada
@@ -404,31 +573,27 @@ function criarCard(filme) {
 }
 
 // Exibe o filme marcado como "destaque" (ex.: o mais recente lançamento premiado) em um banner especial
+// Esteira com os filmes marcados como "destaque" (ex.: os mais premiados/aclamados),
+// rolando continuamente para a esquerda. A lista é duplicada para o loop ficar contínuo.
 function renderizarDestaque() {
     const secao = document.getElementById("destaque-section");
-    if (!secao) return;
+    const trilha = document.getElementById("destaque-trilha");
+    if (!secao || !trilha) return;
 
-    const destaque = filmes.find(filme => filme.destaque);
-    if (!destaque) return;
+    const destaques = filmes.filter(filme => filme.destaque);
+    if (destaques.length === 0) return;
 
-    secao.innerHTML = `
-        <div class="destaque-content">
-            <div class="destaque-poster">
-                <img src="${destaque.capa}" alt="Pôster de ${destaque.titulo}" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">
+    const cartaoHTML = (filme) => `
+        <button type="button" class="destaque-card" data-details="${filme.id}">
+            <img src="${filme.capa}" alt="Pôster de ${filme.titulo}" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">
+            <div class="destaque-card-info">
+                <strong>${filme.titulo}</strong>
+                <span>⭐ ${filme.nota} · ${filme.generoNome}</span>
             </div>
-            <div class="destaque-info">
-                <span class="destaque-selo">🏆 Top Filme Premiado</span>
-                <h2>${destaque.titulo}</h2>
-                <p>${destaque.sinopse}</p>
-                <div class="destaque-meta">
-                    <span class="movie-rating">⭐ ${destaque.nota}</span>
-                    <span>${destaque.generoNome}</span>
-                    <span>Classificação: ${destaque.classificacao}</span>
-                </div>
-                <button type="button" class="destaque-btn" data-details="${destaque.id}">▶ Ver detalhes e comprar</button>
-            </div>
-        </div>
+        </button>
     `;
+
+    trilha.innerHTML = destaques.map(cartaoHTML).join("") + destaques.map(cartaoHTML).join("");
     secao.hidden = false;
 }
 
@@ -676,10 +841,13 @@ function criarGeradorComSemente(semente) {
     };
 }
 
-// Gera o mapa de assentos: ocupação varia de acordo com o filme e a sessão escolhida
-function carregarAssentos(totalAssentos = 32) {
+// Gera o mapa de assentos no estilo cinema real: fileiras com letra (A, B, C...)
+// e colunas numeradas (1, 2, 3...), então cada poltrona tem um código tipo "C4".
+// A ocupação varia de acordo com o filme e a sessão escolhida.
+function carregarAssentos(totalAssentos = 32, colunas = 8) {
     const grid = document.getElementById('assentos-grid');
     grid.innerHTML = '';
+    grid.classList.add('assentos-mapa');
     assentosSelecionados = 0;
     atualizarResumo();
 
@@ -688,30 +856,60 @@ function carregarAssentos(totalAssentos = 32) {
     const semente = filmeAtual ? (filmeAtual.id * 977) + diaNumero + horaNumero : 12345;
     const aleatorio = criarGeradorComSemente(semente);
 
-    for (let i = 1; i <= totalAssentos; i++) {
-        const assento = document.createElement('div');
-        assento.classList.add('assento');
+    const totalLinhas = Math.ceil(totalAssentos / colunas);
 
-        // Cerca de 35% dos assentos já ocupados, variando por filme/sessão
-        if (aleatorio() < 0.35) {
-            assento.classList.add('ocupado');
+    // Cabeçalho com os números das colunas
+    const cabecalho = document.createElement('div');
+    cabecalho.className = 'assentos-linha assentos-cabecalho';
+    cabecalho.innerHTML = '<span class="assento-letra"></span>' +
+        Array.from({ length: colunas }, (_, coluna) => `<span class="assento-numero-coluna">${coluna + 1}</span>`).join('');
+    grid.appendChild(cabecalho);
+
+    for (let linha = 0; linha < totalLinhas; linha++) {
+        const letraLinha = String.fromCharCode(65 + linha); // A, B, C, D...
+        const linhaEl = document.createElement('div');
+        linhaEl.className = 'assentos-linha';
+
+        const rotulo = document.createElement('span');
+        rotulo.className = 'assento-letra';
+        rotulo.textContent = letraLinha;
+        linhaEl.appendChild(rotulo);
+
+        for (let coluna = 1; coluna <= colunas; coluna++) {
+            const numeroGlobal = (linha * colunas) + coluna;
+            if (numeroGlobal > totalAssentos) break;
+
+            const codigo = `${letraLinha}${coluna}`;
+            const assento = document.createElement('div');
+            assento.classList.add('assento');
+            assento.dataset.codigo = codigo;
+            assento.title = `Assento ${codigo}`;
+            assento.setAttribute('role', 'button');
+            assento.setAttribute('aria-label', `Assento ${codigo}`);
+
+            // Cerca de 35% dos assentos já ocupados, variando por filme/sessão
+            if (aleatorio() < 0.35) {
+                assento.classList.add('ocupado');
+            }
+
+            assento.addEventListener('click', () => {
+                if (!assento.classList.contains('ocupado')) {
+                    assento.classList.toggle('selecionado');
+
+                    if (assento.classList.contains('selecionado')) {
+                        assentosSelecionados++;
+                    } else {
+                        assentosSelecionados--;
+                    }
+
+                    atualizarResumo();
+                }
+            });
+
+            linhaEl.appendChild(assento);
         }
 
-        assento.addEventListener('click', () => {
-            if (!assento.classList.contains('ocupado')) {
-                assento.classList.toggle('selecionado');
-
-                if (assento.classList.contains('selecionado')) {
-                    assentosSelecionados++;
-                } else {
-                    assentosSelecionados--;
-                }
-
-                atualizarResumo();
-            }
-        });
-
-        grid.appendChild(assento);
+        grid.appendChild(linhaEl);
     }
 }
 
@@ -753,7 +951,7 @@ function confirmarReserva() {
     const sessaoTexto = `${diaAtual} às ${horaAtual}`;
 
     abrirSucessoModal(sessaoTexto, assentosSelecionados, totalTexto);
-    incrementarTicketsComprados(assentosSelecionados);
+    registrarCompra(filmeAtual, sessaoTexto, assentosSelecionados, totalTexto);
     fecharModal();
 }
 
@@ -776,11 +974,26 @@ function fecharSucessoModal() {
     sucessoModal.classList.remove('active');
 }
 
-// Badge "Assento comprado" perto do botão "Explorar filmes", com contador salvo no navegador
-function incrementarTicketsComprados(quantidade) {
-    const total = (Number(localStorage.getItem('popcorn_tickets_comprados')) || 0) + quantidade;
-    localStorage.setItem('popcorn_tickets_comprados', String(total));
-    mostrarBadgeCompra(total);
+// Badge "Assento comprado" perto do botão "Explorar filmes", com histórico salvo no navegador
+// para poder mostrar uma prévia de quais filmes foram comprados.
+function registrarCompra(filme, sessaoTexto, quantidade, totalTexto) {
+    const historico = JSON.parse(localStorage.getItem('popcorn_compras_historico')) || [];
+
+    historico.unshift({
+        filmeId: filme ? filme.id : null,
+        titulo: filme ? filme.titulo : 'Filme',
+        capa: filme ? filme.capa : '',
+        sessao: sessaoTexto,
+        qtd: quantidade,
+        total: totalTexto
+    });
+
+    const historicoLimitado = historico.slice(0, 20);
+    localStorage.setItem('popcorn_compras_historico', JSON.stringify(historicoLimitado));
+
+    const totalAssentos = historicoLimitado.reduce((soma, item) => soma + item.qtd, 0);
+    mostrarBadgeCompra(totalAssentos);
+    renderizarPreviewCompras(historicoLimitado);
 }
 
 function mostrarBadgeCompra(total) {
@@ -796,7 +1009,77 @@ function mostrarBadgeCompra(total) {
     badge.classList.add('compra-badge-pop');
 }
 
+// Prévia (dropdown) com os filmes cujos ingressos já foram comprados
+function renderizarPreviewCompras(historico) {
+    const lista = document.getElementById('compra-preview-lista');
+    if (!lista) return;
+
+    if (!historico || historico.length === 0) {
+        lista.innerHTML = `<li class="compra-preview-vazio">Nenhum ingresso comprado ainda.</li>`;
+        return;
+    }
+
+    lista.innerHTML = historico.map(item => `
+        <li class="compra-preview-item">
+            <img class="compra-preview-poster" src="${item.capa || PLACEHOLDER_IMG}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">
+            <div class="compra-preview-info">
+                <strong>${item.titulo}</strong>
+                <span>${item.sessao} · ${item.qtd} assento${item.qtd > 1 ? 's' : ''}</span>
+                <span>R$ ${item.total}</span>
+            </div>
+        </li>
+    `).join('');
+}
+
+function fecharPreviewCompras() {
+    const badge = document.getElementById('compra-badge');
+    const preview = document.getElementById('compra-preview');
+    if (!preview || preview.hidden) return;
+    preview.hidden = true;
+    if (badge) badge.setAttribute('aria-expanded', 'false');
+}
+
+// O painel usa position:fixed (para não ser cortado pelo overflow:hidden do
+// hero-banner), então a posição precisa ser calculada em JS a partir do botão.
+function alternarPreviewCompras() {
+    const badge = document.getElementById('compra-badge');
+    const preview = document.getElementById('compra-preview');
+    if (!badge || !preview) return;
+
+    if (!preview.hidden) {
+        fecharPreviewCompras();
+        return;
+    }
+
+    const rect = badge.getBoundingClientRect();
+    preview.hidden = false;
+    badge.setAttribute('aria-expanded', 'true');
+
+    const larguraPreview = preview.offsetWidth || 300;
+    const limiteDireito = window.innerWidth - 16;
+    const left = Math.max(16, Math.min(rect.left, limiteDireito - larguraPreview));
+
+    preview.style.top = `${rect.bottom + 10}px`;
+    preview.style.left = `${left}px`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    const totalSalvo = Number(localStorage.getItem('popcorn_tickets_comprados')) || 0;
+    const historico = JSON.parse(localStorage.getItem('popcorn_compras_historico')) || [];
+    const totalSalvo = historico.reduce((soma, item) => soma + item.qtd, 0);
+
     if (totalSalvo > 0) mostrarBadgeCompra(totalSalvo);
+    renderizarPreviewCompras(historico);
+
+    const badge = document.getElementById('compra-badge');
+    if (badge) badge.addEventListener('click', alternarPreviewCompras);
+
+    document.addEventListener('click', (e) => {
+        const wrapper = document.querySelector('.compra-wrapper');
+        if (!wrapper || wrapper.contains(e.target)) return;
+        fecharPreviewCompras();
+    });
+
+    // Fecha o painel se a página rolar, já que ele não acompanha o botão em position:fixed
+    window.addEventListener('scroll', fecharPreviewCompras, { passive: true });
+    window.addEventListener('resize', fecharPreviewCompras);
 });
